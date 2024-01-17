@@ -12,14 +12,14 @@ void line(void);
 void info(void);
 void cal(void);
 
-int main(int argc, const char * argv[]) {
+int main(void) {
     // insert code here...
     title();//call or run the title function
     line();
     info();
     line();
     
-    cal();
+    cal();//get and calculate the number
     return 0;
 }
 
@@ -32,6 +32,8 @@ int main(int argc, const char * argv[]) {
 void title(void){
     printf("IPC144 NBB\tWorkshop 1\tPart 2\n");
 }
+
+//print line
 void line(void){
     printf("------------------------------------------------------------\n");
 }
@@ -44,6 +46,7 @@ void info(void){
     printf("\thchang67@myseneca.ca\n");
 }
 
+//get the number and calculate
 void cal(void){
     printf("Enter the marks for the following subjects,\n");
     int sIPC = 0, sULI = 0, sEAC = 0, avgS = 0;
@@ -59,12 +62,4 @@ void cal(void){
     
     avgS = (sIPC + sULI + sEAC)/3;
     printf("The average is: %d\n", avgS);
-    /*
-     Enter the marks for the following subjects,
-     IPC144: 77
-     ULI101: 55
-     EAC150: 82
-     The average is: 71
-     */
-    
 }
