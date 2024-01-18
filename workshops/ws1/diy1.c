@@ -7,19 +7,34 @@
 #include <stdio.h>
 
 
-void title(void);//introduces the title funcion
-void line(void);
-void info(void);
-void cal(void);
+void    title(void);//introduces the title funcion
+void    line(void);
+void    info(void);
+int     cal(int ,int ,int);
+int     getScore(void);
+
 
 int main(void) {
     // insert code here...
+
+    int sIPC = 0, sULI = 0, sEAC = 0, avgS = 0;
     title();//call or run the title function
     line();
     info();
     line();
     
-    cal();//get and calculate the number
+    printf("Enter the marks for the following subjects,\n");
+    printf("IPC144: ");
+    sIPC = getScore();
+    printf("ULI101: ");
+    sULI = getScore();
+    printf("EAC150: ");
+    sEAC = getScore();
+
+    
+    avgS = cal(sIPC ,sULI ,sEAC);//get and calculate the number
+    
+    printf("The average is: %d\n", avgS);
     return 0;
 }
 
@@ -46,20 +61,15 @@ void info(void){
     printf("\thchang67@myseneca.ca\n");
 }
 
-//get the number and calculate
-void cal(void){
-    printf("Enter the marks for the following subjects,\n");
-    int sIPC = 0, sULI = 0, sEAC = 0, avgS = 0;
-    
-    printf("IPC144: ");
-    scanf("%d", &sIPC);
-    
-    printf("ULI101: ");
-    scanf("%d", &sULI);
-    
-    printf("EAC150: ");
-    scanf("%d", &sEAC);
-    
-    avgS = (sIPC + sULI + sEAC)/3;
-    printf("The average is: %d\n", avgS);
+//calculate the number input
+int cal(int ipc,int uil,int eac){
+    //printf("%d,%d,%d",ipc,uil,eac);
+    return (ipc+uil+eac)/3;
+}
+
+//get the Score that user input
+int getScore(){
+    int theValue;
+    scanf("%d", &theValue);
+    return theValue;
 }
