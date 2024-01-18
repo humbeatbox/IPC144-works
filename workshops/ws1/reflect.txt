@@ -1,0 +1,7 @@
+Reflect
+As humans, we always do things without thinking; that is because our brains have been learning how to work. However, the computer is composed of digital, which means it cannot think like a human. So, we need to learn how to use the machine language thoroughly.
+
+There is an issue and thing that I have learned this week. Firstly, in programming, I always lost the steps I needed initially, and this needed time to find out what was going on. The best way for me to solve it is to break it down into small parts and identify the most vital part of the purpose. Then, build the function for different parts of jobs. It can decrease the reputation of the same code, make the code clear, and make it more concentrated on the purpose. It would be a good method to handle it step by step and make the program right.
+
+Secondly, an important thing that we need to do is follow the specific rules and do it exactly perfectly, or it might go wrong. We don't make our own decisions because our job is to follow instructions and help people translate the human language into computer language.
+
