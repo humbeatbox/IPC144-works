@@ -35,6 +35,7 @@ int main(void) {
     avgS = cal(sIPC ,sULI ,sEAC);//get and calculate the number
     
     printf("The average is: %d\n", avgS);
+    line();
     return 0;
 }
 
