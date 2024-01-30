@@ -20,9 +20,18 @@ void rectangle(char leftTop, char topFill, char rightTop,
     }
     printf("%c", rightTop);
     //upper
-    printf("\n");
     //Body--------------------------------------------------------------------
-    printf("%c", left);
+
+    for (int i = 0; i < minFillTimes-7; i++) {
+        printf("\n");
+        printf("%c", left);
+        //printf("%c", fillScreen);
+        for (int j = 0; j < minFillTimes; ++j) {
+            printf("%c", fillScreen);
+        }
+        printf("%c",right);
+        //printf("\n");
+    }
 
 
 /*
@@ -31,15 +40,9 @@ void rectangle(char leftTop, char topFill, char rightTop,
             screenFillCount = screenFillCount + 1;
         }
  */
-    //for (int i = 0; i < minFillTimes; ++i) {
-    //printf("%c", fillScreen);
-    for (int j = 0; j < minFillTimes; ++j) {
-        printf("%c", fillScreen);
-    }
-    //}
 
 
-    printf("%c",right);
+
     //Body--------------------------------------------------------------------
     printf("\n");
     //bottom
