@@ -7,6 +7,7 @@
 //get the int from the user
 int getInt(void){
     int intValue = 0;
+    printf("> ");
     scanf("%d",&intValue);
     return intValue;
 }
@@ -14,6 +15,7 @@ int getInt(void){
 //get the int from the user
 double getDouble(void){
     double douValue = 0.0;
+    printf("> ");
     scanf("%lf",&douValue);
     return douValue;
 }
