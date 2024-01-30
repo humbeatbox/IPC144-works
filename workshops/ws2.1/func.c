@@ -1,11 +1,26 @@
-//
-//  func.c
-//  ws2.1
-//
-//  Created by Gary Chang on 2024-01-23.
-//
+/**/
+/*
+ * type
+ * integers:
+ *      char        8 bits          1 bytes long 2 to power 8
+ *      short       16 bots long    2 bytes
+ *      int         32 bits         4 bytes
+ *      long        32 bits -> 64   4 or 8 bytes
+ *      long long   64  bits        8 bytes
+ *floating:
+ *  float
+ *  double
+ *  long double
+ *
+ *  stdio
+ *  Formate specifiers for IO
+ *  char    %c
+ *  int     %d
+ *  floats  %f
+ *  double  %lf
+ *
+ * */
 
-//#include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
@@ -26,9 +41,14 @@ void line40(void){
 }
 
 void dBox(void){
-    //int cnt = 0;
-    line40();
+//    int cnt = 0;
+//    line40();
+    int a = 1;
+    int b = 5;
+    int c;
 
-    line40();
+    c = a + b;
+    printf("%d",&c);
+//    line40();
 
 }
