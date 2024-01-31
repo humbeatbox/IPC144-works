@@ -20,10 +20,12 @@ void rectangle(char leftTop, char topFill, char rightTop,
     printf("%c", rightTop);
     //upper
     //Body--------------------------------------------------------------------
-    for (int i = 0; i < minFillTimes-7; i++) {
+    int i = 0;
+    int j = 0;
+    for (i = 0; i < minFillTimes-7; i++) {
         printf("\n");
         printf("%c", left);
-        for (int j = 0; j < minFillTimes; ++j) {
+        for (j = 0; j < minFillTimes; ++j) {
             printf("%c", fillScreen);
         }
         printf("%c",right);
