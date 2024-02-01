@@ -17,10 +17,10 @@ void rectangle(char leftTop, char topFill, char rightTop,
         printf("%c", topFill);
         topFillCount = topFillCount + 1;
     }
-    printf("%c", rightTop);
+    printf("%c\n", rightTop);
     //upper
     //Body--------------------------------------------------------------------
-    int i = 0;
+    /*int i = 0;
     int j = 0;
     for (i = 0; i < minFillTimes-7; i++) {
         printf("\n");
@@ -29,9 +29,23 @@ void rectangle(char leftTop, char topFill, char rightTop,
             printf("%c", fillScreen);
         }
         printf("%c",right);
+    }*/
+//    printf("%c", left);
+    int i = 0;
+    while(i < minFillTimes-7){
+        printf("%c", left);
+        int j= 0;
+        while  ( j <minFillTimes){
+            printf("%c", fillScreen);
+            j++;
+        }
+        printf("%c",right);
+        printf("\n");
+        i++;
     }
+
     //Body--------------------------------------------------------------------
-    printf("\n");
+
     //bottom
     printf("%c",leftButtom);
     while (buttomFillCount < minFillTimes){
