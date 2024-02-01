@@ -12,7 +12,7 @@ void rectangle(char leftTop, char topFill, char rightTop,
     int buttomFillCount = 0;
 
     //upper
-    printf("%c", leftTop);
+    printf("**%c", leftTop);
     while (topFillCount < minFillTimes) {
         printf("%c", topFill);
         topFillCount = topFillCount + 1;
