@@ -3,15 +3,10 @@
 //
 #include <stdio.h>
 
-    void rectangle(char leftTop, char topFill, char rightTop,
-    char right, char rightButtom, char fillButtom,
-    char leftButtom, char left, char fillScreen,
-    int width, int height){
-
-/*void rectangle(char leftTop, char topFill, char rightTop,
-               char left, char right,
-               char rightButtom, char fillButtom, char leftButtom,
-               char fillScreen) {*/
+void rectangle(char leftTop, char topFill, char rightTop,
+char right, char rightButtom, char fillButtom,
+char leftButtom, char left, char fillScreen,
+int width, int height){
 
     int minFillTimes = fillScreen - 57;//transfer
     int topFillCount = 0;
@@ -26,21 +21,11 @@
     printf("%c\n", rightTop);
     //upper
     //Body--------------------------------------------------------------------
-    /*int i = 0;
-    int j = 0;
-    for (i = 0; i < minFillTimes-7; i++) {
-        printf("\n");
-        printf("%c", left);
-        for (j = 0; j < minFillTimes; j++) {
-            printf("%c", fillScreen);
-        }
-        printf("%c",right);
-    }*/
-//    printf("%c", left);
-    int i = 0;
+    int i = 0;//tmp var
+    //print the number
     while(i < minFillTimes-7){
         printf("%c", left);
-        int j= 0;
+        int j= 0;//tmp var
         while  ( j <minFillTimes){
             printf("%c", fillScreen);
             j++;

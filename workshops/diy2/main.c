@@ -28,7 +28,6 @@ int main(void) {
         rectangle('+', '-', '+', '|','+', '-', '+', '|',fillScreen,width,height);
         fillScreen = fillScreen + 1;
         counter = counter + 1;
-
     }
     return 0;
 }
