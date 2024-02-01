@@ -40,6 +40,6 @@ void rectangle(char leftTop, char topFill, char rightTop,
     }
     printf("%c",rightButtom);
     //upper
-    printf("\n");
+    //printf("\n");
 
 }
