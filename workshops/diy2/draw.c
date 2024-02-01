@@ -2,10 +2,16 @@
 // Created by Gary Chang on 2024-01-30.
 //
 #include <stdio.h>
-void rectangle(char leftTop, char topFill, char rightTop,
+
+    void rectangle(char leftTop, char topFill, char rightTop,
+    char right, char rightButtom, char fillButtom,
+    char leftButtom, char left, char fillScreen,
+    int width, int height){
+
+/*void rectangle(char leftTop, char topFill, char rightTop,
                char left, char right,
                char rightButtom, char fillButtom, char leftButtom,
-               char fillScreen) {
+               char fillScreen) {*/
 
     int minFillTimes = fillScreen - 57;//transfer
     int topFillCount = 0;
