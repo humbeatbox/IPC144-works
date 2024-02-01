@@ -25,7 +25,7 @@ void rectangle(char leftTop, char topFill, char rightTop,
     for (i = 0; i < minFillTimes-7; i++) {
         printf("\n");
         printf("%c", left);
-        for (j = 0; j < minFillTimes; ++j) {
+        for (j = 0; j < minFillTimes; j++) {
             printf("%c", fillScreen);
         }
         printf("%c",right);
