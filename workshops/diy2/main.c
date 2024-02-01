@@ -28,7 +28,7 @@ int main(void) {
         rectangle('+', '-', '+', '|','+', '-', '+', '|',fillScreen,width,height);
         fillScreen = fillScreen + 1;
         counter = counter + 1;
-        printf("\n");
+
     }
     return 0;
 }

@@ -60,6 +60,6 @@
     }
     printf("%c",rightButtom);
     //upper
-    //printf("\n");
+    printf("\n");
 
 }
