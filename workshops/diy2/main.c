@@ -19,7 +19,7 @@ int main(void) {
     int height;
     char fillScreen = 'A';//make sure print A in input 1
     printf("How many Rectangles?\n");
-    noOfDraws = getInt();
+    noOfDraws = getInt();// get the number of rectangle
     /*printf("Width:\n> ");
     width = getInt();
     printf("Height:\n> ");
@@ -28,6 +28,7 @@ int main(void) {
         rectangle('+', '-', '+', '|','+', '-', '+', '|',fillScreen,width,height);
         fillScreen = fillScreen + 1;
         counter = counter + 1;
+
     }
     return 0;
 }

@@ -8,25 +8,25 @@ char right, char rightButtom, char fillButtom,
 char leftButtom, char left, char fillScreen,
 int width, int height){
 
-    int minFillTimes = fillScreen - 57;//transfer
+    int minFillTimes = fillScreen - 57;//transfer the min character 'A' to number what we need(is 8)
     int topFillCount = 0;
     int buttomFillCount = 0;
 
-    //upper
+    //upper side of rectangle
     printf("%c", leftTop);
-    while (topFillCount < minFillTimes) {
+    while (topFillCount < minFillTimes) {// fill the mid of top
         printf("%c", topFill);
         topFillCount = topFillCount + 1;
     }
     printf("%c\n", rightTop);
     //upper
-    //Body--------------------------------------------------------------------
+    //Body of rectangle--------------------------------------------------------------------
     int i = 0;//tmp var
     //print the number
-    while(i < minFillTimes-7){
+    while(i < minFillTimes-7){//
         printf("%c", left);
         int j= 0;//tmp var
-        while  ( j <minFillTimes){
+        while  ( j <minFillTimes){//fill the character with letter
             printf("%c", fillScreen);
             j++;
         }
@@ -35,11 +35,11 @@ int width, int height){
         i++;
     }
 
-    //Body--------------------------------------------------------------------
+    //Body of rectangle--------------------------------------------------------------------
 
-    //bottom
+    //bottom of rectangle
     printf("%c",leftButtom);
-    while (buttomFillCount < minFillTimes){
+    while (buttomFillCount < minFillTimes){// fill the mid of buttom
         printf("%c",fillButtom);
         buttomFillCount = buttomFillCount + 1;
     }

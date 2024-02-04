@@ -1,0 +1,7 @@
+I noticed three interesting things in this lab.
+
+Firstly, the “while loop” statement can help me determine where the program should stop or keep going. I also noticed that the time to stop is very critical because stopping at the wrong time can cause unexpected output and errors, especially in the time we use multiple“while loop” to create the statement to handle repetitive structures.
+
+Secondly, avoid using the global variables because it is hard to understand and determine what their value is. Instead, creating independent variables in each function. This can ensure whole new variables are used when every time we use the function. Otherwise, 
+
+Thirdly, making explanations and variables in any function is very important. As time passes, it‘s hard for people to know what I am writing. Even checking the same code by myself will need a lot of time to figure out the meaning of variables and the function. It is essential to write a note when people are coding.
