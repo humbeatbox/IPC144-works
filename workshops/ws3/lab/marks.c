@@ -36,10 +36,14 @@ int getNoOfStudents(void){
     scanf("%d",&numberGet);
     if(numberGet<5){
         printf("Minimum number of students is 5!\n");
+        numberGet = 0;
     }else if(numberGet>35){
         printf("Maximum number of students is 35!\n");
+        numberGet = 0;
+    }else{
+        return  numberGet;
     }
-    return  numberGet;
+
 }
 int getMark(int maximumAcceptableMarkValue){
 //    int input = 0;

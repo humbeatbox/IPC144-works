@@ -34,7 +34,7 @@ void testerProgram(void);
 int main(void) {
    //prnGradeTester();
    //gradeTester();
-   //getNoOfStudentsTester();
+   getNoOfStudentsTester();
    //getMarkTester();
    //testerProgram();
    return 0;
