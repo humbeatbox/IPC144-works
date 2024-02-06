@@ -31,19 +31,17 @@ char grade(int markOutOf100){
 
 
 int getNoOfStudents(void){
-    int numberGet = 0;
+    int numberGet;
     printf("Please enter the number of students\n> ");
     scanf("%d",&numberGet);
     if(numberGet<5){
         printf("Minimum number of students is 5!\n");
-        numberGet = 0;
+        //numberGet = 0;
     }else if(numberGet>35){
         printf("Maximum number of students is 35!\n");
-        numberGet = 0;
-    }else{
-        return  numberGet;
+        //numberGet = 0;
     }
-
+        return  numberGet;
 }
 int getMark(int maximumAcceptableMarkValue){
 //    int input = 0;
