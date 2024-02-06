@@ -36,7 +36,7 @@ int main(void) {
    //gradeTester();
    //getNoOfStudentsTester();
    //getMarkTester();
-   testerProgram();
+   //testerProgram();
    return 0;
 }
 

@@ -7,7 +7,7 @@ void prnGrade(char letterGrade){//just print the letter //prototype WRITE correc
     putchar(letterGrade);
 }
 char grade(int markOutOf100){
-    char retG;
+    char retG = 'X';
     if(markOutOf100>-1 && markOutOf100 < 50){
         retG = 'F';
     }
