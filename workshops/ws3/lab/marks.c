@@ -46,7 +46,7 @@ int getNoOfStudents(void){
 int getMark(int maximumAcceptableMarkValue){
 //    int input = 0;
     int inPutMark = 0;
-    printf("Please print a mark between 0 and max value:\n> ");
+    printf("Please print a mark between 0 and %d value:\n> ",maximumAcceptableMarkValue);
     scanf("%d",&inPutMark);
     if(inPutMark < 0 || inPutMark > maximumAcceptableMarkValue){
         inPutMark = -1;
