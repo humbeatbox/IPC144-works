@@ -39,7 +39,8 @@ double getDbl( ) {
 //find the Max number in array
 int arrMaxNumber(int arr[],int arrNumber){
     int maxNum = arr[0];
-    for (int i = 0; i < arrNumber; ++i) {
+    int i;
+    for ( i = 0 ; i < arrNumber; ++i) {
         if(arr[i] > maxNum){
             maxNum = arr[i];
         }
@@ -48,7 +49,8 @@ int arrMaxNumber(int arr[],int arrNumber){
 }
 int arrMinNumber(int arr[],int arrNumber){
     int minNum = arr[0];
-    for (int i = 0; i < arrNumber; ++i) {
+    int i;
+    for (i = 0; i < arrNumber; ++i) {
         if(arr[i] < minNum){
             minNum = arr[i];
         }
@@ -59,8 +61,8 @@ int arrMinNumber(int arr[],int arrNumber){
 double arrAvgNumber(int arr[],int arrNumber){
     int sum = 0;
     double avgNum = 0;
-
-    for (int i = 0; i < arrNumber; ++i) {
+    int i;
+    for ( i = 0;i < arrNumber; ++i) {
         sum += arr[i];
 //        printf("%d",arr[i]);
     }
