@@ -59,14 +59,14 @@ int arrMinNumber(int arr[],int arrNumber){
 }
 
 double arrAvgNumber(int arr[],int arrNumber){
-    int sum = 0;
+    double sum = 0;
     double avgNum = 0;
     int i;
     for ( i = 0;i < arrNumber; ++i) {
         sum += arr[i];
 //        printf("%d",arr[i]);
     }
-    printf("%d",sum);
+//    printf("%d",sum);
     avgNum = sum / arrNumber;
     return avgNum;
 }

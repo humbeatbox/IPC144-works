@@ -23,13 +23,16 @@ void report(int numberOfStudents) {
 
         while(score[i] ==0){
             score[i] = getMark(maxMark);
-            printf("Entered: %d%%, %c\n",score[i], grade(score[i]));
+            if (score[i] != 0){
+                printf("Entered: %d%%, %c\n",score[i], grade(score[i]));
+            }
+//            printf("Entered: %d%%, %c\n",score[i], grade(score[i]));
         }
     }
 
     printf("Lowest mark entered: %d\n", arrMinNumber(score,numberOfStudents));
     printf("Highest mark entered: %d\n", arrMaxNumber(score,numberOfStudents));
-    printf("Average mark entered: %.1lf\n", arrAvgNumber(score,numberOfStudents));
+    printf("Average mark entered: %.1lf%%\n", arrAvgNumber(score,numberOfStudents));
 /*    for (i = 0; i < numberOfStudents; i++) {
 //        score[i] = getMark(i);
         printf("%d\t",score[i]);
