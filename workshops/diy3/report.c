@@ -9,6 +9,7 @@
 void report(int numberOfStudents) {
     printf("What are the marks out of?\n> ");
     int maxMark = 0;
+    char grd;
     while (maxMark == 0) {
         maxMark = getMaxMark();
     }
@@ -25,7 +26,10 @@ void report(int numberOfStudents) {
             printf("%d- ", i + 1);
             score[i] = getMark(maxMark);
             if (score[i] != 0) {
-                printf("Entered: %d%%, %c\n", score[i], grade(score[i]));
+                grd = grade(score[i]);
+                printf("Entered: %d%%, ", score[i]);
+                prnGrade(grd);
+                putchar('\n');
             }
         }
     }
