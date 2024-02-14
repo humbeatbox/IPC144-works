@@ -32,5 +32,5 @@ void report(int numberOfStudents) {
 
     printf("Lowest mark entered: %d\n", arrMinNumber(score, numberOfStudents));
     printf("Highest mark entered: %d\n", arrMaxNumber(score, numberOfStudents));
-    printf("Average mark entered: %.1lf%%\n", arrAvgNumber(score, numberOfStudents));
+    printf("Average of all marks: %.1lf%%\n", arrAvgNumber(score, numberOfStudents));
 }
