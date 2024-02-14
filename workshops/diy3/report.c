@@ -22,7 +22,8 @@ void report(int numberOfStudents) {
     for (i = 0; i < numberOfStudents; i++) {
 
         while(score[i] ==0){
-            printf("Entered: %d%%, %c\n", score[i] = getMark(maxMark), grade(score[i]));
+            score[i] = getMark(maxMark);
+            printf("Entered: %d%%, %c\n",score[i], grade(score[i]));
         }
     }
 
