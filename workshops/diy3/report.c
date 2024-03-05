@@ -13,7 +13,6 @@ void report(int numberOfStudents) {
     while (maxMark == 0) {
         maxMark = getMaxMark();
     }
-
     //creat an array and fill with 0
     int score[numberOfStudents];
     memset(score, 0, sizeof(score));
