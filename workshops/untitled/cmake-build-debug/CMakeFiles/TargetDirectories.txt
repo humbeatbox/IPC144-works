@@ -1,3 +1,0 @@
-/Users/garychang/Documents/GitHub/Semester1/IPC144-works/workshops/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-/Users/garychang/Documents/GitHub/Semester1/IPC144-works/workshops/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/garychang/Documents/GitHub/Semester1/IPC144-works/workshops/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
