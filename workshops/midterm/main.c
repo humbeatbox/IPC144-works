@@ -51,5 +51,6 @@ double listSum(double increment, double start, double end){
             ret = ret + sum;
         }
     }
+    //if i != 0 print "-"
     return ret;
 }
