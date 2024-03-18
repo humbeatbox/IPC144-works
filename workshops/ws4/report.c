@@ -6,10 +6,10 @@
 #include "utils.h"
 void readStudentInfo( int stno[], float mark[], int num ){
     for (int i = 0; i < num; i++) {
-        printf("Enter Student Information #%d:\n",i+1);
-        printf("Student Number\n>");
+        printf("Enter Student Information # %d:\n",i+1);
+        printf("Student Number\n> ");
         stno[i] = getInt();
-        printf("Marks\n>");
+        printf("Marks\n> ");
         mark[i] = getDbl();
     }
 }

@@ -8,6 +8,7 @@ int main(void) {
     int num;
     printf("Enter number of the student records\n> ");
     num = getInt();
+    printf("Enter %d student records:\n",num);
     readStudentInfo(stdno, mark, num);
     printReport(stdno, mark, num);
     return 0;
