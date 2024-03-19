@@ -7,7 +7,7 @@
 
 void readStudentInfo(struct Student std[], int num){
     int i;
-    for (int i = 0; i < num; i++) {
+    for (i = 0; i < num; i++) {
         std[i] = getStudent();
     }
 }
