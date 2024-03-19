@@ -7,13 +7,9 @@ int main(void) {
     int num;
     printf("Enter number of the student records\n> ");
     num = getInt();
-    //readStudentInfo(std, num);
-    int i;
-    for (i = 0; i < num; i++) {
-        std[i] = getStudent();
-    }
-    //std[i] = getStudent();
+    readStudentInfo(std, num);
     printReport(std, num);
-    //printf("Average:%d",);
+
+
     return 0;
 }

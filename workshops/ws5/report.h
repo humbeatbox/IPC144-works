@@ -10,6 +10,7 @@ struct Student{
     char name[31]; // to hold the student name up to 30 characters in a Cstring
 };
 struct Student getStudent(void);
+void readStudentInfo(struct Student[], int num);
 void printReport(const struct Student S[], int num);
 
 
