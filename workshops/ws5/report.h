@@ -13,8 +13,4 @@ struct Student getStudent(void);
 void readStudentInfo(struct Student[], int num);
 void printReport(const struct Student S[], int num);
 
-
-//void readStudentInfo(struct Student std[], int num);
-//void printReport(struct Student std[], int num);
-
 #endif //WS5_REPORT_H

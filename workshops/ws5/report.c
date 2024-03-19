@@ -6,18 +6,20 @@
 #include "utils.h"
 
 void readStudentInfo(struct Student std[], int num){
+    printf("Enter %d student records:",num);
     int i;
     for (i = 0; i < num; i++) {
+        printf("Enter Student Information # %d",num+1);
         std[i] = getStudent();
     }
 }
 struct Student getStudent(void){
     struct Student std;
-    printf("Name\n");
+    printf("Name\n> ");
     getLin(std.name);
-    printf("Student Number\n>");
+    printf("Student Number\n> ");
     std.stNo = getInt();
-    printf("Mark\n>");
+    printf("Mark\n> ");
     std.mark = getFlo();
     printf("----------------------\n");
     return std;

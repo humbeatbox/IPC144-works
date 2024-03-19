@@ -9,7 +9,5 @@ int main(void) {
     num = getInt();
     readStudentInfo(std, num);
     printReport(std, num);
-
-
     return 0;
 }
