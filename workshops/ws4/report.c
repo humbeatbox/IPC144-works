@@ -5,6 +5,8 @@
 #include "report.h"
 #include "utils.h"
 void readStudentInfo( int stno[], float mark[], int num ){
+    //int array[num];
+    printf("Enter %d student records:\n",num);
     for (int i = 0; i < num; i++) {
         printf("Enter Student Information # %d:\n",i+1);
         printf("Student Number\n> ");
@@ -19,10 +21,10 @@ void printReport(const int stno[],const float mark[], int num){
     printf("student number   mark\n");
     printf("---------------+------\n");
     for (int i = 0; i < num; ++i) {
-        printf("%-15d|%.1lf\n",stno[i],mark[i]);
+        printf("%-15d|%6.1lf\n",stno[i],mark[i]);
         total = total +mark[i];
     }
     printf("---------------+------\n");
     avg = total/num;
-    printf("       Average:%6.1lf",avg);
+    printf("       Average: %6.1lf",avg);
 }
