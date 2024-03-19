@@ -5,7 +5,6 @@
 #include "report.h"
 #include "utils.h"
 void readStudentInfo( int stno[], float mark[], int num ){
-    //int array[num];
     printf("Enter %d student records:\n",num);
     for (int i = 0; i < num; i++) {
         printf("Enter Student Information # %d:\n",i+1);
