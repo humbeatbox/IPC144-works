@@ -9,7 +9,7 @@ void readStudentInfo(struct Student std[], int num){
     printf("Enter %d student records:\n",num);
     int i;
     for (i = 0; i < num; i++) {
-        printf("Enter Student Information # %d\n",i+1);
+        printf("Enter Student Information # %d:\n",i+1);
         std[i] = getStudent();
     }
 }
@@ -36,5 +36,5 @@ void printReport(const struct Student S[], int num){
     }
     printf("------------------------------+----------------+------\n");
     avg = sum/num;
-    printf("                                        Average: %6.1f",avg);
+    printf("                                        Average: %6.1f\n",avg);
 }
