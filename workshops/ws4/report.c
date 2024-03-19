@@ -26,7 +26,6 @@ void printReport(const int stno[],const float mark[], int num){
     for (i = 0; i < num; ++i) {
         printf("%-15d|%6.1lf\n",stno[i],mark[i]);
         total = total +mark[i];
-
     }
     printf("---------------+------\n");
     avg = total/num;
