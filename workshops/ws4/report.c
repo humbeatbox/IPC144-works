@@ -11,8 +11,10 @@ void readStudentInfo( int stno[], float mark[], int num ){
         printf("Enter Student Information # %d:\n",i+1);
         printf("Student Number\n> ");
         stno[i] = getInt();
-        printf("Marks\n> ");
+        printf("Mark\n> ");
         mark[i] = getFlt();
+        printf("----------------------");
+        nl();
     }
 }
 void printReport(const int stno[],const float mark[], int num){
@@ -24,8 +26,9 @@ void printReport(const int stno[],const float mark[], int num){
     for (i = 0; i < num; ++i) {
         printf("%-15d|%6.1lf\n",stno[i],mark[i]);
         total = total +mark[i];
+
     }
     printf("---------------+------\n");
     avg = total/num;
-    printf("       Average: %6.1lf",avg);
+    printf("       Average: %6.1lf\n",avg);
 }
