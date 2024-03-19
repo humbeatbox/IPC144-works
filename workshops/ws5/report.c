@@ -36,5 +36,5 @@ void printReport(const struct Student S[], int num){
     }
     printf("------------------------------+----------------+------\n");
     avg = sum/num;
-    printf("                                        Average: %6.1f\n",avg);
+    printf("                                       Average: %6.1f\n",avg);
 }

@@ -11,7 +11,7 @@ int getInt(){
     char trash = ' ';
     while (scanf("%d%c",&ret,&trash) !=2 || trash != '\n'){
         fluKey();
-        printf("Bad integer, try again\n");
+        printf("Bad integer, try again\n> ");
     }
     return ret;
 }
@@ -20,7 +20,7 @@ float getFlo(){
     char trash = ' ';
     while(scanf("%f%c",&ret,&trash) != 2 || trash != '\n'){
         fluKey();
-        printf("Bad real number, try again\n");
+        printf("Bad real number, try again\n> ");
     }
     return ret;
 }
