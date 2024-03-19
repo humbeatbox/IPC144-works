@@ -1,0 +1,5 @@
+Array reflect part:
+In this workshop, we learned how to use the array and structure. Combine what we teach before,the function, make everything perfect. In the array structure, we could not use the function to return an array. Instead, we can pass the array into an array and modify everything inside of a function. This way helps us solve the problem that we can not return an array. In addition, when we use the function to pass the array, add the 'const' to make sure the print or read function does not change our array. Because of the trait of the array, pass the array using the address of the array. We must be very careful when using the array. One more thing is when we pass the array to the function, we need to tell the function how many spaces the array is.
+
+Printf part:
+In this workshop, we also learned how to use print smarter. We can use the "-" sign to ask the printf to align to the left and the number in front of the d that we want to show to define how much space we want to put in the variable.
