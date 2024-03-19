@@ -11,7 +11,7 @@ void readStudentInfo( int stno[], float mark[], int num ){
         printf("Student Number\n> ");
         stno[i] = getInt();
         printf("Marks\n> ");
-        mark[i] = getDbl();
+        mark[i] = getFlt();
     }
 }
 void printReport(const int stno[],const float mark[], int num){
