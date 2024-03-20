@@ -1,0 +1,7 @@
+This workshop taught us how to pass the personal define structure array into the function.
+Using the structure can packaging everything we need to gather; this reduces the workload and also make the code clear. We also built the utils by ourselves, which helped me clearly understand how the function "scanf" works. In addition, using the standard and customized head file helps us separate the declaration and implement a function that we use in the “main” function. This simplifies the “main” function.
+
+As part of #DEFINE
+We can also use the #define to define the specific word or variable in a very simple way.
+Defining a variable gives it a name in the front of the beginning, and it will help us replace every single word.
+If we find every error, bug, or change in the variable, we can just fix a small part of our code. It can not only save time but also make the code easier to read and cleaner than before.

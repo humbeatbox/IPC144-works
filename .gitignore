@@ -71,5 +71,5 @@ Mkfile.old
 dkms.conf
 
 #personalize
-.DS_Store
+*.DS_Store
 
