@@ -10,10 +10,11 @@ void readStudentInfo(struct Student std[], int num){
     int i;
     for (i = 0; i < num; i++) {
         printf("Enter Student Information # %d:\n",i+1);
-        std[i] = getStudent();
+        //std[i] = getStudent();
+        getStudent(&std[i]);
     }
 }
-struct Student getStudent(void){
+/*struct Student getStudent(void){
     struct Student std;
     printf("Name\n> ");
     getLin(std.name);
@@ -23,8 +24,16 @@ struct Student getStudent(void){
     std.mark = getFlo();
     printf("----------------------\n");
     return std;
+}*/
+void getStudent(struct Student* std){
+    printf("Name\n> ");
+    getLin(std->name);
+    printf("Student Number\n> ");
+    std->stNo = getInt();
+    printf("Mark\n> ");
+    std->mark = getFlo();
+    printf("----------------------\n");
 }
-
 void printReport(const struct Student S[], int num){
     float sum,avg;
     printf("Name                           student number   mark\n"

@@ -9,7 +9,8 @@ struct Student{
     int stNo; // to hold the student number
     char name[31]; // to hold the student name up to 30 characters in a Cstring
 };
-struct Student getStudent(void);
+//struct Student getStudent(void);
+void getStudent(struct Student* std);
 void readStudentInfo(struct Student[], int num);
 void printReport(const struct Student S[], int num);
 
