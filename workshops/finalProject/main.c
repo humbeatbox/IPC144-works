@@ -15,9 +15,38 @@ that my professor provided to complete my project milestones.
 -----------------------------------------------------------
 */
 
-#include <stdio.h>
 
+#include <stdlib.h>
+#include <stdbool.h>
+#include "utils.h"
+#include "PosUI.h"
+#include "PosApp.h"
 int main() {
-    printf("Hello, World!\n");
+    bool done = false;
+    FILE* myfile;
+
+    loadItems(myfile);
+    while (!done){
+        switch (menu()) {
+            case 1:
+                inventory();
+                break;
+            case 2:
+                addItem();
+                break;
+            case 3:
+                removeItem();
+                break;
+            case 4:
+                stockItem();
+                break;
+            case 5:
+                POS();
+                break;
+            case 0:
+                done = true;
+                saveItem(myfile);
+        }
+    }
     return 0;
 }
