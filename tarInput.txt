@@ -1,0 +1,16 @@
+3
+Jimbo Jones
+123123
+55.5
+Nelson Muntz
+234234
+33.3
+Bart Simpson
+abc
+123abc
+123 
+456456
+abc
+88.8abc
+88.8 
+88.8
