@@ -6,6 +6,7 @@
 #define FINALPROJECT_UTILS_H
 #include <stdio.h>
 void fluKey();
+void flushFile( FILE* fptr );
 int getInt();
 float getFlo();
 void getLin(char line[]);

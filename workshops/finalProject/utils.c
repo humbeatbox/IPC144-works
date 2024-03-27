@@ -7,6 +7,12 @@
 void fluKey(){
     while  (getchar() != '\n');
 }
+void flushFile( FILE* fptr ) {
+    char ch=0;
+    while ( ch != '\n' ) {
+        fscanf( fptr, "%c", &ch );
+    }
+}
 int getInt(){
     int ret;
     char trash = ' ';

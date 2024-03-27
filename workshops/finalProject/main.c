@@ -21,10 +21,17 @@ that my professor provided to complete my project milestones.
 #include "utils.h"
 #include "PosUI.h"
 #include "PosApp.h"
+#include "POS.h"
 int main() {
+    struct Item items[MAX_NO_ITEMS];
+    //int noOfItems;
+
+
+
+
+
+    //do the POS
     bool done = false;
-
-
     while (!done){
         switch (menu()) {
             case 1:
