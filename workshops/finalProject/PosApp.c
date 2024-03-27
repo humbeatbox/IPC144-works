@@ -17,7 +17,7 @@ that my professor provided to complete my project milestones.
 
 #include "PosApp.h"
 void inventory(void){
-    printf(">>>> Inventory...");
+    printf(">>>> Inventory...\n");
 }
 void addItem(void){
     printf(">>>> Adding Item...\n");
@@ -31,10 +31,10 @@ void stockItem(void){
 void POS(void){
     printf(">>>> Point Of Sale...\n");
 }
-void loadItems(FILE* myfile){
+void loadItems(const char filename[]){
     printf(">>>> Loading Items...\n");
 
 }
-void saveItem(FILE* myfile){
-    printf(">>>> Saving Items...");
+void saveItem(const char filename[]){
+    printf(">>>> Saving Items...\n");
 }

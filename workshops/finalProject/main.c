@@ -23,9 +23,8 @@ that my professor provided to complete my project milestones.
 #include "PosApp.h"
 int main() {
     bool done = false;
-    FILE* myfile;
 
-    loadItems(myfile);
+
     while (!done){
         switch (menu()) {
             case 1:
@@ -45,8 +44,9 @@ int main() {
                 break;
             case 0:
                 done = true;
-                saveItem(myfile);
+                saveItem("posdata.csv");
         }
     }
+    runPos("posdata.csv");
     return 0;
 }

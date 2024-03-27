@@ -24,7 +24,7 @@ void addItem(void);
 void removeItem(void);
 void stockItem(void);
 void POS(void);
-void loadItems(FILE* myfile);
-void saveItem(FILE* myfile);
+void loadItems(const char filename[]);
+void saveItem(const char filename[]);
 
 #endif //FINALPROJECT_POSAPP_H
