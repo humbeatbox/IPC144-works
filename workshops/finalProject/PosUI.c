@@ -28,6 +28,7 @@ int menu(void){
            "4- Stock item\n"
            "5- POS\n"
            "0- exit program\n");
+    printf("> ");
     ret = getInt();
     while (ret<0 || ret>5){
         printf("[0<=Selection<=5], retry: ");

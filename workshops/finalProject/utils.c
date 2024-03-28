@@ -28,7 +28,7 @@ void flushFile( FILE* fptr ) {
 int getInt(){
     int ret;
     char trash = ' ';
-    printf("> ");
+
     while (scanf("%d%c",&ret,&trash) !=2 || trash != '\n'){
         fluKey();
         printf("Invalid Integer, try again:  ");
