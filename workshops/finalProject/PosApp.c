@@ -118,3 +118,14 @@ void listItems(void){
     }
     printf("-----^--------^--------------------^-------^---^-----^---------^\n");
 }
+
+
+double billDisplay(const struct Item* item){
+    char cur_cost[15];
+    strlcpy(cur_cost,item->name,15);//using the size bound string copy string
+    printf("| " "%-14s" "|",cur_cost);
+    printf("%10.2lf"" | ", cost(item));
+    (item->taxed == 0)?printf("   "): printf("Yes");
+    printf(" |\n");
+    return cost(item);
+}
