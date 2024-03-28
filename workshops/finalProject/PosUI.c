@@ -64,7 +64,7 @@ void runPos(const char filename[]){
                 break;
             case 0:
                 done = true;
-                saveItem(filename);
+                saveItems(filename);
                 break;
             default:
                 printf("Invalid selection!\n");

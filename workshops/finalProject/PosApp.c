@@ -51,8 +51,8 @@ void POS(void){
     start("Point Of Sale");
 }
 
-void saveItem(const char filename[]){
-
+void saveItems(const char filename[]){
+    start("saveItems");
     FILE* myfile = fopen(filename, "w");//open the file for write
     if(myfile) {
         int i;
@@ -60,7 +60,7 @@ void saveItem(const char filename[]){
             fprintf(myfile,
                     "%s"","
                     "%s"","
-                    "%lf"","
+                    "%.2lf"","
                     "%d"","
                     "%d""\n"
                     ,items[i].SKU,items[i].name,items[i].price,items[i].taxed,items[i].quantity);
@@ -70,13 +70,12 @@ void saveItem(const char filename[]){
     }else {
         printf("Could not open >>" "%s" "<<\n",filename );
     }
+    start("Done!");
 }
 
 int loadItems(const char filename[]){
+    start("loadItems");
     struct Item readItem; //create a temp item to read from the file
-    printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
-           "-----|--------|--------------------|-------|---|-----|---------|\n");
-
     FILE* myfile = fopen(filename, "r");//open the file for read
     if(myfile) {//if file exist keep going
 
@@ -98,6 +97,7 @@ int loadItems(const char filename[]){
     }else {
         fprintf( stderr, "File not found!\n" );
     }
+    start("Done!");
     return noOfReadItem;
 }
 
@@ -106,6 +106,7 @@ double cost(const struct Item* item){
 }
 
 void listItems(void){
+
     printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
            "-----|--------|--------------------|-------|---|-----|---------|\n");
     int i;

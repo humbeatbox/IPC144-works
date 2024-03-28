@@ -35,7 +35,7 @@ void removeItem(void);
 void stockItem(void);
 void POS(void);
 int loadItems(const char filename[]);
-void saveItem(const char filename[]);
+void saveItems(const char filename[]);
 double cost(const struct Item* item);
 void listItems(void);
 #endif //FINALPROJECT_POSAPP_H
