@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone?
+Final Project Milestone1
 Module: main.c
 Filename: main.c
 Version 1.0
@@ -15,38 +15,9 @@ that my professor provided to complete my project milestones.
 -----------------------------------------------------------
 */
 
-
-#include <stdlib.h>
-#include <stdbool.h>
-#include "utils.h"
 #include "PosUI.h"
-#include "PosApp.h"
+
 int main() {
-    bool done = false;
-
-
-    while (!done){
-        switch (menu()) {
-            case 1:
-                inventory();
-                break;
-            case 2:
-                addItem();
-                break;
-            case 3:
-                removeItem();
-                break;
-            case 4:
-                stockItem();
-                break;
-            case 5:
-                POS();
-                break;
-            case 0:
-                done = true;
-                saveItem("posdata.csv");
-        }
-    }
     runPos("posdata.csv");
     return 0;
 }
