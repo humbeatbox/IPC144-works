@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone1
+Final Project Milestone2
 Module: PosApp.h
 Filename: PosApp.h
 Version 1.0
@@ -16,15 +16,26 @@ that my professor provided to complete my project milestones.
 */
 #ifndef FINALPROJECT_POSAPP_H
 #define FINALPROJECT_POSAPP_H
-
+#include "POS.h"
 #include <stdio.h>
+struct Item{
+    char SKU[MAX_SKU_LEN];
+    char name[60];
+    double price;
+    int taxed;
+    int quantity;
+};
+extern struct Item items[MAX_NO_ITEMS];
+extern noOfReadItem;
 
+void start(const char* action);
 void inventory(void);
 void addItem(void);
 void removeItem(void);
 void stockItem(void);
 void POS(void);
-void loadItems(const char filename[]);
+int loadItems(const char filename[]);
 void saveItem(const char filename[]);
-
+double cost(const struct Item* item);
+void listItems(void);
 #endif //FINALPROJECT_POSAPP_H

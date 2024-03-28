@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone1
+Final Project Milestone2
 Module: utils.h
 Filename: utils.h
 Version 1.0
@@ -19,8 +19,9 @@ that my professor provided to complete my project milestones.
 #define FINALPROJECT_UTILS_H
 #include <stdio.h>
 void fluKey();
+void flushFile( FILE* fptr );
 int getInt();
 float getFlo();
 void getLin(char line[]);
-
+void strCpy( char des[], const char src[] );
 #endif //FINALPROJECT_UTILS_H
