@@ -19,8 +19,8 @@ that my professor provided to complete my project milestones.
 #include "utils.h"
 #include "POS.h"
 #include <string.h>
-struct Item items[MAX_NO_ITEMS];//global items array to record the file content
-int noOfReadItem=0;//count the number of read item from the file
+struct Item items[MAX_NO_ITEMS];//define the global items array to record the file content
+int noOfReadItem=0;//define count the number of read item from the file
 
 
 void start(const char* action) {
