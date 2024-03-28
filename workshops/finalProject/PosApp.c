@@ -129,3 +129,15 @@ double billDisplay(const struct Item* item){
     printf(" |\n");
     return cost(item);
 }
+
+//display item Form
+void display(const struct Item* item){
+    printf("=============v\n");//start display
+    printf("Name:        ""%s\n",item->name);
+    printf("Sku:         ""%s\n",item->SKU);
+    printf("Price:       ""%.2lf\n",item->price);
+    printf("Price + tax: ");
+    (item->taxed == 0)?printf("N/A\n"): printf("%.2lf\n", cost(item));
+    printf("Stock Qty:   ""%d\n",item->quantity);
+    printf("=============v\n");//end
+}

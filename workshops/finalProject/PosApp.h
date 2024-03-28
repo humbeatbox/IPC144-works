@@ -39,4 +39,5 @@ void saveItems(const char filename[]);
 double cost(const struct Item* item);
 void listItems(void);
 double billDisplay(const struct Item* item);
+void display(const struct Item* item);
 #endif //FINALPROJECT_POSAPP_H
