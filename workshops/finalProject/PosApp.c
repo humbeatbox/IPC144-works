@@ -52,7 +52,24 @@ void POS(void){
 }
 
 void saveItem(const char filename[]){
-    printf(">>>> Saving Items...\n");
+
+    FILE* myfile = fopen(filename, "w");//open the file for write
+    if(myfile) {
+        int i;
+        for (i = 0; i < noOfReadItem; i++) {
+            fprintf(myfile,
+                    "%s"","
+                    "%s"","
+                    "%lf"","
+                    "%d"","
+                    "%d""\n"
+                    ,items[i].SKU,items[i].name,items[i].price,items[i].taxed,items[i].quantity);
+
+        }
+        fclose(myfile);
+    }else {
+        printf("Could not open >>" "%s" "<<\n",filename );
+    }
 }
 
 int loadItems(const char filename[]){
@@ -60,7 +77,7 @@ int loadItems(const char filename[]){
     printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
            "-----|--------|--------------------|-------|---|-----|---------|\n");
 
-    FILE* myfile = fopen(filename, "r");//open the file
+    FILE* myfile = fopen(filename, "r");//open the file for read
     if(myfile) {//if file exist keep going
 
         //read the file and put input the tmp readItem

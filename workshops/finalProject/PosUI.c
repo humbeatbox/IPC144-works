@@ -42,8 +42,6 @@ void runPos(const char filename[]){
     FILE* myfile = fopen(filename,"r");
     //load the file
     loadItems(filename);
-
-
     //display the menu waiting for the user to select
     bool done = false;
     while (!done){
@@ -66,7 +64,7 @@ void runPos(const char filename[]){
                 break;
             case 0:
                 done = true;
-                saveItem("posdata.csv");
+                saveItem(filename);
                 break;
             default:
                 printf("Invalid selection!\n");
