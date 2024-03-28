@@ -1,7 +1,19 @@
-//
-// Created by Gary Chang on 2024-03-26.
-//
+/* Citation and Sources...
+Final Project Milestone2
+Module: utils.c
+Filename: utils.c
+Version 1.0
+Author	Hsiao-Kang Chang
+Revision 1
+-----------------------------------------------------------
+Date      Reason
+2024/3/27  Preliminary release
 
+-----------------------------------------------------------
+I have done all the coding by myself and only copied the code
+that my professor provided to complete my project milestones.
+-----------------------------------------------------------
+*/
 #include "utils.h"
 #include "POS.h"
 void fluKey(){
@@ -36,4 +48,12 @@ float getFlo(){
 void getLin(char line[]){
     scanf("%[^\n]",line);
     fluKey();
+}
+
+void strCpy( char des[], const char src[] ) {//int len
+    int i ;
+    for ( i = 0; src[i]; i++ ) {
+        des[i] = src[i];
+    }
+    des[i] = 0;//if(i<len)des[i] = 0
 }

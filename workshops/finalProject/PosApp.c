@@ -1,5 +1,5 @@
 /* Citation and Sources...
-Final Project Milestone?
+Final Project Milestone2
 Module: PosApp.c
 Filename: PosApp.c
 Version 1.0
@@ -17,22 +17,38 @@ that my professor provided to complete my project milestones.
 
 #include "PosApp.h"
 #include "utils.h"
+#include "POS.h"
+#include <string.h>
+struct Item items[MAX_NO_ITEMS];//global items array to record the file content
+int noOfReadItem=0;//count the number of read item from the file
 
+
+void start(const char* action) {
+    printf(">>>> %s...\n", action);
+}
 void inventory(void){
+    double totalCost=0;//calculate to total price
     printf(">>>> List Items...\n");
-    loadItems("postdata.csv");
+    listItems();//list items
+    int i;
+    for ( i = 0; i < noOfReadItem; ++i) {//calculate the price after taxed and plus
+        totalCost += items[i].quantity * cost(&items[i]);
+    }
+    printf("                               Total Asset: " "$  | " "%13.2lf" " |\n",totalCost);
+    printf("-----------------------------------------------^---------------^\n");
+
 }
 void addItem(void){
-    printf(">>>> Adding Item...\n");
+    start("Adding Item");
 }
 void removeItem(void){
-    printf(">>>> Remove Item...\n");
+    start("Adding Item");
 }
 void stockItem(void){
-    printf(">>>> Stock Items...\n");
+    start("Stock Items");
 }
 void POS(void){
-    printf(">>>> Point Of Sale...\n");
+    start("Point Of Sale");
 }
 
 void saveItem(const char filename[]){
@@ -40,52 +56,47 @@ void saveItem(const char filename[]){
 }
 
 int loadItems(const char filename[]){
-    int noOfItems = 0;
-    //data type like this 1313,Paper Tissue,1.22,1,204
-    //struct Item readItem;
-    struct Item readItem;
-    //struct Item* ptr;
-    //ptr = &readItem;
-    //fscanf(myfile,"%s,%s,%lf,%d,%d",readItem->SKU,readItem->name,&readItem->price,&readItem->taxed,&readItem->quantity);//with Item* readItem is ok
-    int rowNum=1;//start from 1
-    double totalCost=0;
-    double itemSum=0;
-    printf(">>>> List Items...\n");
+    struct Item readItem; //create a temp item to read from the file
     printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
            "-----|--------|--------------------|-------|---|-----|---------|\n");
-    FILE* myfile = fopen("posdata.csv", "r");
-    while (fscanf(myfile, "%[^\\,],%[^\\,],%lf,%d,%d", readItem.SKU, readItem.name, &readItem.price, &readItem.taxed, &readItem.quantity) == 5) {
-        flushFile(myfile);
 
-        if(readItem.taxed == 0){
-            readItem.taxed = ' ';
-            //printf("%c",readItem.taxed);
-        }else{
-            readItem.taxed = 'T';
+    FILE* myfile = fopen(filename, "r");//open the file
+    if(myfile) {//if file exist keep going
+
+        //read the file and put input the tmp readItem
+        while (fscanf(myfile, "%[^\\,],%[^\\,],%lf,%d,%d", readItem.SKU, readItem.name, &readItem.price, &readItem.taxed, &readItem.quantity) == 5) {
+
+            flushFile(myfile);
+
+            //save the local item into global items
+            strcpy(items[noOfReadItem].SKU, readItem.SKU);
+            strcpy(items[noOfReadItem].name , readItem.name);
+            items[noOfReadItem].price = readItem.price;
+            items[noOfReadItem].taxed = readItem.taxed;
+            items[noOfReadItem].quantity = readItem.quantity;
+
+            noOfReadItem++;//for save to next items
         }
-        itemSum=readItem.price * readItem.quantity;
-        totalCost += itemSum;
-        printf("%5d|%8s|%-20s|%7.2lf|%2c |%5d|%9.2lf\n",rowNum,readItem.SKU, readItem.name, readItem.price, readItem.taxed, readItem.quantity,itemSum);
-        rowNum++;
+        fclose(myfile);
+    }else {
+        fprintf( stderr, "File not found!\n" );
     }
-    printf("-----^--------^--------------------^-------^---^-----^---------^\n");
-    printf("                                       Total Asset: $|%9.2lf\n",totalCost);
-    printf("-----^--------^--------------------^-------^---^-----^---------^\n");
-
-    //fscanf(myfile,"%[^\\,],%[^\\,],%lf,%d,%d",a,b,&c,&d,&e);
-   /* while (fscanf(myfile, "%[^\\,],%[^\\,],%lf,%d,%d", readItem.SKU, readItem.name, &readItem.price, &readItem.taxed, &readItem.quantity) == 5) {
-        flushFile(myfile);
-        printf("%s,%s,%.2lf,%d,%d\n",readItem.SKU, readItem.name, readItem.price, readItem.taxed, readItem.quantity);
-    }*/
-    fclose(myfile);
-    //printf(">>>> Done!...\n");
-
-    return 0;
+    return noOfReadItem;
 }
 
 double cost(const struct Item* item){
-    double the_cost;
+    return (item->price * (1+ (item->taxed * TAX)));//return the true cost --the taxed price;
+}
 
-    the_cost = item->price * (1+ item->taxed * TAX);
-    return the_cost;
+void listItems(void){
+    printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
+           "-----|--------|--------------------|-------|---|-----|---------|\n");
+    int i;
+    for (i = 0; i < noOfReadItem; i++) {//read the items from the items and print it ine by one
+        printf("%4d" " | " "%6s" " | " "%-18s" " |" "%6.2lf" " | ",i+1,items[i].SKU, items[i].name, items[i].price);
+        (items[i].taxed == 0)?printf(" "): printf("T");//print the number of taxed in the char
+
+        printf(" | " "%3d" " |" "%8.2lf" " |\n",items[i].quantity,items[i].quantity * cost(&items[i]));
+    }
+    printf("-----^--------^--------------------^-------^---^-----^---------^\n");
 }
