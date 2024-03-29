@@ -60,12 +60,14 @@ void POS(void){
     int i;
     for (i = 0; i <= MAX_BILL_ITEMS &&  modifyIndex != -2 ; i++) {
         modifyIndex = search();//find the target
+        if(modifyIndex==-2)break;//in case first time no input
+
         if(modifyIndex != -1 && items[modifyIndex].quantity == 0){//found item but sold out!
             printf("Item sold out!\n");
         }else if(modifyIndex == -1){//no found item SKU
             printf("SKU not found!\n");
         } else {//found the SKU and not sold out
-            if (modifyIndex==-2)break;
+            //if(modifyIndex==-2)break;
             //strcpy(bill[i]->SKU, items[modifyIndex].SKU);//save the target item to bill array
             bill[i] = &items[modifyIndex];
             items[modifyIndex].quantity -= 1;//minus one
@@ -179,14 +181,17 @@ void display(const struct Item* item){
 
 //search the SKU
 //if have that SKU return SKU
-//if no return -1
+//if no found return -1
 //if no input return -2
+//error when input 8 digital number will change the success to -256 idk why need to fix!!!!!!!!!
 int search(void){
-    int success = -1;//default no find
+    int success;// = -1;//default no found
 
-    char skuCom[MAX_SKU_LEN];
+    char skuCom[MAX_SKU_LEN]={};
     printf("Sku: ");
-    getLin(skuCom);
+
+    getLin(skuCom);//when input 8 digital number will change the success to -256 idk why
+
     if(skuCom[0] == '\0'){//if no input initial the first char as '0'
         success = -2;
     }
@@ -195,6 +200,8 @@ int search(void){
         if(strcmp(skuCom,items[i].SKU) == 0){
             success = i;
             break;
+        }else{
+            success = -1;
         }
     }
     return success;
