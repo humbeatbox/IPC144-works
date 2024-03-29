@@ -183,15 +183,12 @@ void display(const struct Item* item){
 //if have that SKU return SKU
 //if no found return -1
 //if no input return -2
-//error when input 8 digital number will change the success to -256 idk why need to fix!!!!!!!!!
 int search(void){
     int success;// = -1;//default no found
 
     char skuCom[MAX_SKU_LEN]={};
     printf("Sku: ");
-
-    getLin(skuCom);//when input 8 digital number will change the success to -256 idk why
-
+    getLin(skuCom);
     if(skuCom[0] == '\0'){//if no input initial the first char as '0'
         success = -2;
     }
