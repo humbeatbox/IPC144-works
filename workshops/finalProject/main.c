@@ -78,6 +78,7 @@ int main() {
     return 0;
 }*/
 
+/*
 //for MS33
 #include <stdio.h>
 #include "PosApp.h"
@@ -97,5 +98,22 @@ int main() {
         total += cost(&I[i]);
     }
     printf("total: %.2lf", total);
+    return 0;
+}*/
+#include <stdio.h>
+#include "PosApp.h"
+int main() {
+    int i;
+    int foundIndex;
+    loadItems("posdata.csv");
+    for(i = 0; (foundIndex = search()) != -2;i++){
+        if(foundIndex >= 0) {
+            printf("SKU found at index %d\n", foundIndex);
+        }
+        else {
+            printf("SKU not found!\n");
+        }
+    }
+    printf("Search was executed %d times...", i);
     return 0;
 }

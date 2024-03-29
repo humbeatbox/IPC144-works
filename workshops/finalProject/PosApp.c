@@ -141,3 +141,25 @@ void display(const struct Item* item){
     printf("Stock Qty:   ""%d\n",item->quantity);
     printf("=============v\n");//end
 }
+
+//search the SKU
+int search(void){
+    int success = -1;//default no find
+
+    char skuCom[MAX_SKU_LEN];
+    printf("Sku: ");
+    getLin(skuCom);
+
+    if(skuCom[0] == '\0'){//if no input initial the first char as '0'
+        success = -2;
+    }
+
+    int i;
+    for (i = 0; i < noOfReadItem; ++i) {
+        if(strcmp(skuCom,items[i].SKU) == 0){
+            success = i;
+        }
+    }
+
+    return success;
+}
