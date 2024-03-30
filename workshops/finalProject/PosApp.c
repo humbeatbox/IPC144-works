@@ -46,6 +46,10 @@ void removeItem(void){
 }
 void stockItem(void){
     start("Stock Items");
+
+
+
+
 }
 
 
@@ -206,3 +210,21 @@ int search(void){
     }
     return success;
 }
+
+//MS4
+//let the user select the item of the row number
+int selectItems(const struct Item* item){
+    int rowSelect;
+    printf("Select an item\n");
+    listItems();
+    printf("Select row:\n");
+
+    rowSelect = getInt();
+    while (rowSelect<1 || rowSelect > (noOfReadItem+1)){//noOfReadItem is an index of items array
+        printf("[0<=Selection<=%d], retry: ",noOfReadItem+1);
+        rowSelect = getInt();
+    }
+
+    return rowSelect;
+}
+
