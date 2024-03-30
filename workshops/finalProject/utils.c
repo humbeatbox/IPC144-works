@@ -44,11 +44,25 @@ float getFlo(){
     }
     return ret;
 }
+double getDbl( ) {
+    double num;
+    char trash = ' ';
+    while ( scanf( "%lf%c", &num, &trash ) != 2 ||
+            trash != '\n' ) {
+        fluKey( );
+        printf( "Invalid Double, try again: " );
+    }
+    return num;
+}
+
+
 
 void getLin(char line[]){
     scanf("%[^\n]",line);
     fluKey();
 }
+
+
 
 void strCpy( char des[], const char src[] ) {//int len
     int i ;

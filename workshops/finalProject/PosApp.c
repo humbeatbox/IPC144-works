@@ -40,10 +40,36 @@ void inventory(void){
 }
 void addItem(void){
     start("Adding Item");
+    struct Item inputItem={};
+
+    printf("SKU: \n");
+    do {
+        if(strlen(inputItem.SKU)>MAX_SKU_LEN){
+            printf("SKU number over %d digit please input again\n",MAX_SKU_LEN);
+        } else {
+            getLin(inputItem.SKU);
+        }
+    } while (strlen(inputItem.SKU)>MAX_SKU_LEN);
+
+
+    printf("Name: \n");
+    getLin(inputItem.name);
+
+    printf("Price: \n");
+    inputItem.price = getDbl();
+
+
+    printf("Is the item Taxed? (Y)es/(N)o: \n");
+    printf("Quantity:\n");
 }
 void removeItem(void){
     start("Adding Item");
+
+
+
 }
+
+
 void stockItem(void){
     start("Stock Items");
     printf("Select an item:\n");
@@ -52,10 +78,11 @@ void stockItem(void){
     int selectQuantity;
     selectRow = selectItems();
     display(&items[selectRow-1]);//transfer the row to index
+
     printf("Quantity to add: \n");
     selectQuantity = getInt();
     while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items array
-        printf("[1<=Row Number<=%d], retry: ",items[selectRow-1].quantity);
+        printf("[1<=Quantity to add:<=%d], retry: ",items[selectRow-1].quantity);
         selectQuantity = getInt();
     }
 }
@@ -229,12 +256,19 @@ int selectItems(void){
         printf("[0<=Row Number<=%d], retry: ",noOfReadItem);
         ret = getInt();
     }
-
-  /*  while (selectRow<1 || selectRow > (noOfReadItem+1)){//noOfReadItem is an index of items array
-        printf("[0<=Selection<=%d], retry: ",noOfReadItem+1);
-        selectRow = selectItems();
-    }*/
     return ret;
 }
 
+/*
+int selectQuantity(void) {
+    int ret;
+    printf("Select row:\n");
+    ret = getInt();
+    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items array
+        printf("[0<=Quantity to add:<=%d], retry: ",noOfReadItem);
+        ret = getInt();
+    }
+    return ret;
+}
+*/
 

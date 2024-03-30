@@ -23,5 +23,6 @@ void flushFile( FILE* fptr );
 int getInt();
 float getFlo();
 void getLin(char line[]);
+double getDbl(void);
 void strCpy( char des[], const char src[] );
 #endif //FINALPROJECT_UTILS_H
