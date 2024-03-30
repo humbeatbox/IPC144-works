@@ -47,20 +47,76 @@ void removeItem(void){
 void stockItem(void){
     start("Stock Items");
 }
+
+
+
+//search the SKU in items and display
+//maximum 10 items
 void POS(void){
+    //Uses an array of Item structure pointers to keep the addresses of the sold items for bill printing
     start("Point Of Sale");
+    struct Item* bill[MAX_BILL_ITEMS]={};//set the bill as zero for print the bill
+    double totalPrice = 0;
+    int modifyIndex;
+    int numOfBill = 0;
+
+    int i;
+    for (i = 0; i < MAX_BILL_ITEMS &&  (modifyIndex != -2) ; i++) {//bill len less than 10 (0-9) and not no input
+        modifyIndex = search();//find the target
+        if(modifyIndex==-2)break;//in case first time no input
+        if(modifyIndex != -1 && items[modifyIndex].quantity == 0){//found item but sold out!
+            printf("Item sold out!\n");
+        }else if(modifyIndex == -1){//no found item SKU
+            printf("SKU not found!\n");
+        } else {//found the SKU and not sold out
+            bill[numOfBill] = &items[modifyIndex];
+            items[modifyIndex].quantity -= 1;//minus one
+            display(&items[modifyIndex]);
+            numOfBill++;
+            totalPrice += cost(&items[modifyIndex]);
+        }
+    }
+    printf("+---------------v-----------v-----+\n"
+           "| Item          |     Price | Tax |\n"
+           "+---------------+-----------+-----+\n");
+    int j;
+    for (j= 0; j < numOfBill; j++) {//have items in bill and less than the max of items in bill
+        billDisplay(bill[j]);
+    }
+    printf("+---------------^-----------^-----+\n"
+           "| total:              %6.2lf|\n"
+           "^---------------------------^\n",totalPrice);
 }
 
-void saveItem(const char filename[]){
-    printf(">>>> Saving Items...\n");
+//save the items from the filename input
+void saveItems(const char filename[]){
+    start("saveItems");
+    FILE* myfile = fopen(filename, "w");//open the file for write
+    if(myfile) {
+        int i;
+        for (i = 0; i < noOfReadItem; i++) {
+            fprintf(myfile,
+                    "%s"","
+                    "%s"","
+                    "%.2lf"","
+                    "%d"","
+                    "%d""\n"
+                    ,items[i].SKU,items[i].name,items[i].price,items[i].taxed,items[i].quantity);
+
+        }
+        fclose(myfile);
+    }else {
+        printf("Could not open >>" "%s" "<<\n",filename );
+    }
+    start("Done!");
 }
 
+//load the item from the input filename
+//return the number of the item in the file
 int loadItems(const char filename[]){
+    start("loadItems");
     struct Item readItem; //create a temp item to read from the file
-    printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
-           "-----|--------|--------------------|-------|---|-----|---------|\n");
-
-    FILE* myfile = fopen(filename, "r");//open the file
+    FILE* myfile = fopen(filename, "r");//open the file for read
     if(myfile) {//if file exist keep going
 
         //read the file and put input the tmp readItem
@@ -81,13 +137,16 @@ int loadItems(const char filename[]){
     }else {
         fprintf( stderr, "File not found!\n" );
     }
+    start("Done!");
     return noOfReadItem;
 }
 
+//calculate the price after taxed
 double cost(const struct Item* item){
     return (item->price * (1+ (item->taxed * TAX)));//return the true cost --the taxed price;
 }
 
+//list the items in the saving items list
 void listItems(void){
     printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
            "-----|--------|--------------------|-------|---|-----|---------|\n");
@@ -95,8 +154,55 @@ void listItems(void){
     for (i = 0; i < noOfReadItem; i++) {//read the items from the items and print it ine by one
         printf("%4d" " | " "%6s" " | " "%-18s" " |" "%6.2lf" " | ",i+1,items[i].SKU, items[i].name, items[i].price);
         (items[i].taxed == 0)?printf(" "): printf("T");//print the number of taxed in the char
-
         printf(" | " "%3d" " |" "%8.2lf" " |\n",items[i].quantity,items[i].quantity * cost(&items[i]));
     }
     printf("-----^--------^--------------------^-------^---^-----^---------^\n");
+}
+
+//display bill
+//return the price after taxed
+double billDisplay(const struct Item* item){
+    char cur_cost[15];
+    strlcpy(cur_cost,item->name,15);//using the size bound string copy string
+    printf("| " "%-14s" "|",cur_cost);
+    printf("%10.2lf"" | ", cost(item));
+    (item->taxed == 0)?printf("   "): printf("Yes");
+    printf(" |\n");
+    return cost(item);
+}
+
+//display item Form
+void display(const struct Item* item){
+    printf("=============v\n");//start display
+    printf("Name:        ""%s\n",item->name);
+    printf("Sku:         ""%s\n",item->SKU);
+    printf("Price:       ""%.2lf\n",item->price);
+    printf("Price + tax: ");
+    (item->taxed == 0)?printf("N/A\n"): printf("%.2lf\n", cost(item));
+    printf("Stock Qty:   ""%d\n",item->quantity);
+    printf("=============^\n");//end
+}
+
+//search the SKU
+//find the SKU and return SKU
+//if no find return -1
+//if no input return -2
+int search(void){
+    int success;
+    char skuCom[MAX_SKU_LEN]={};
+    printf("Sku: ");
+    getLin(skuCom);
+    if(skuCom[0] == '\0'){//if no input initial the first char as '0'
+        success = -2;
+    }
+    int i;
+    for (i = 0; i < noOfReadItem && success != -2; ++i) {
+        if(strcmp(skuCom,items[i].SKU) == 0){
+            success = i;
+            break;
+        }else{
+            success = -1;
+        }
+    }
+    return success;
 }
