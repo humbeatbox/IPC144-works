@@ -20,7 +20,7 @@ that my professor provided to complete my project milestones.
 #include "POS.h"
 #include <string.h>
 struct Item items[MAX_NO_ITEMS];//define the global items array to record the file content
-int noOfReadItem=0;//define count the number of read item from the file
+int noOfReadItem=0;//define count the number of read item from the file(not items index)
 
 
 void start(const char* action) {
@@ -46,10 +46,18 @@ void removeItem(void){
 }
 void stockItem(void){
     start("Stock Items");
-
-
-
-
+    printf("Select an item:\n");
+    listItems();
+    int selectRow;
+    int selectQuantity;
+    selectRow = selectItems();
+    display(&items[selectRow-1]);//transfer the row to index
+    printf("Quantity to add: \n");
+    selectQuantity = getInt();
+    while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items array
+        printf("[1<=Row Number<=%d], retry: ",items[selectRow-1].quantity);
+        selectQuantity = getInt();
+    }
 }
 
 
@@ -142,7 +150,7 @@ int loadItems(const char filename[]){
         fprintf( stderr, "File not found!\n" );
     }
     start("Done!");
-    return noOfReadItem;
+    return noOfReadItem;//return item number not item index
 }
 
 //calculate the price after taxed
@@ -213,18 +221,20 @@ int search(void){
 
 //MS4
 //let the user select the item of the row number
-int selectItems(const struct Item* item){
-    int rowSelect;
-    printf("Select an item\n");
-    listItems();
+int selectItems(void){
+    int ret;
     printf("Select row:\n");
-
-    rowSelect = getInt();
-    while (rowSelect<1 || rowSelect > (noOfReadItem+1)){//noOfReadItem is an index of items array
-        printf("[0<=Selection<=%d], retry: ",noOfReadItem+1);
-        rowSelect = getInt();
+    ret = getInt();
+    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items array
+        printf("[0<=Row Number<=%d], retry: ",noOfReadItem);
+        ret = getInt();
     }
 
-    return rowSelect;
+  /*  while (selectRow<1 || selectRow > (noOfReadItem+1)){//noOfReadItem is an index of items array
+        printf("[0<=Selection<=%d], retry: ",noOfReadItem+1);
+        selectRow = selectItems();
+    }*/
+    return ret;
 }
+
 
