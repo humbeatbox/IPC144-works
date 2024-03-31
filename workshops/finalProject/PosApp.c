@@ -102,10 +102,26 @@ void addItem(void){
 
 
 void removeItem(void){
-    start("Adding Item");
+    start("removeItem");
+    struct Item rmItem={};
+    int rmRowNum=0;
+    printf("Select an item:\n");
+    listItems();
+    printf("Select row: ");
 
-
-
+    //select the remove row
+    rmRowNum = getInt();
+    while (rmRowNum < 1 || rmRowNum > noOfReadItem){
+            printf("[1<=Row Number<%d], retry: ",noOfReadItem);
+            rmRowNum = getInt();
+    }
+    //remove the item of the indicate row and move the back item to front index
+    //items
+    int i;
+    for (i = rmRowNum; i < noOfReadItem; i++) {
+        items[i-1] = items[i];
+    }
+    noOfReadItem--;
 }
 
 
