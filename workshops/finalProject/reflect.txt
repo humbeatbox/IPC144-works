@@ -1,1 +1,12 @@
 MS5 version2
+In the final project, using different kind of condition to control the process flow and make the project clearly.
+There are few notice to myself to notice.
+Firstly, in comapare condition, "=" means set not equal to. This mistake happen lot of times when I tring to compare two numer even make this mistake on midtern exam.
+However, it keep show on my code when I am tring compare two numbers and making me to spend time to debug.
+
+Secondly, if create a global variable, it must be make a note to make sure what is the meaning of the variable.
+For instance, the global variable "noOfitems" in my final project.
+If I don't make any comment some times it means index of items but some times it means the number of items.
+Because we use it many times, making comment for myself is nessusary.
+
+

@@ -55,7 +55,15 @@ double getDbl( ) {
     return num;
 }
 
-
+char getChar(){
+    char ret;
+    char trash = ' ';
+    while(scanf("%c%c",&ret,&trash) != 2 || trash != '\n'){
+        fluKey();
+        printf("Bad Char, try again\n> ");
+    }
+    return ret;
+}
 
 void getLin(char line[]){
     scanf("%[^\n]",line);

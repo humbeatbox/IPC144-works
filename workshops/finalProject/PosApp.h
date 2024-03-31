@@ -42,5 +42,4 @@ double billDisplay(const struct Item* item);
 void display(const struct Item* item);
 int search(void);
 int selectItems(void);
-int selectQuantity(void);
 #endif //FINALPROJECT_POSAPP_H

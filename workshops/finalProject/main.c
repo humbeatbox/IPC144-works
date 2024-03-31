@@ -185,6 +185,7 @@ void ressetData() {
     fclose(f_origin);
     fclose(f_data);
 }
+
 void fileDump(const char* filename) {
     FILE* fptr = fopen(filename, "r");
     if(fptr) {

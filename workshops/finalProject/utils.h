@@ -24,5 +24,6 @@ int getInt();
 float getFlo();
 void getLin(char line[]);
 double getDbl(void);
+char getChar(void);
 void strCpy( char des[], const char src[] );
 #endif //FINALPROJECT_UTILS_H

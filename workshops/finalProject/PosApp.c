@@ -20,7 +20,7 @@ that my professor provided to complete my project milestones.
 #include "POS.h"
 #include <string.h>
 struct Item items[MAX_NO_ITEMS];//define the global items array to record the file content
-int noOfReadItem=0;//define count the number of read item from the file(not items index)
+int noOfReadItem=0;//define count the number of read item from the file(not items index!!!)
 
 
 void start(const char* action) {
@@ -41,27 +41,61 @@ void inventory(void){
 void addItem(void){
     start("Adding Item");
     struct Item inputItem={};
+    char taxedOrNot={'\n'};
 
-    printf("SKU: \n");
-    do {
-        if(strlen(inputItem.SKU)>MAX_SKU_LEN){
-            printf("SKU number over %d digit please input again\n",MAX_SKU_LEN);
-        } else {
-            getLin(inputItem.SKU);
+
+    //check the number of system if over MAX_NO_ITEMS end of add
+    if(noOfReadItem > 28){
+        printf("This system cannot store more that 28 different Items in the inventory!\n");
+    } else {
+
+        printf("SKU: ");
+        do {
+            if (strlen(inputItem.SKU) > MAX_SKU_LEN) {
+                printf("SKU number over %d digit please input again\n", MAX_SKU_LEN);
+            } else {
+                getLin(inputItem.SKU);
+            }
+        } while (strlen(inputItem.SKU) > MAX_SKU_LEN);
+
+        printf("Name: ");
+        getLin(inputItem.name);
+
+        printf("Price: ");
+        inputItem.price = getDbl();
+
+
+        printf("Is the item Taxed? (Y)es/(N)o: ");
+
+        taxedOrNot = getChar();
+        do {
+            if (taxedOrNot == 'Y' || taxedOrNot == 'y') {
+                inputItem.taxed = 1;
+                break;
+            } else if (taxedOrNot == 'N' || taxedOrNot == 'n') {
+                inputItem.taxed = 0;
+                break;
+            } else {
+                printf("Please input again!\n");
+                taxedOrNot = getChar();
+            }
+        } while (!(taxedOrNot == 'Y' || (taxedOrNot == 'y') || taxedOrNot == 'N' || taxedOrNot == 'n'));
+
+        printf("Quantity: ");
+        inputItem.quantity = getInt();
+        while (inputItem.quantity > 999 || inputItem.quantity < 1) {
+            printf("[1<=Quantity<999], retry: ");
+            inputItem.quantity = getInt();
         }
-    } while (strlen(inputItem.SKU)>MAX_SKU_LEN);
-
-
-    printf("Name: \n");
-    getLin(inputItem.name);
-
-    printf("Price: \n");
-    inputItem.price = getDbl();
-
-
-    printf("Is the item Taxed? (Y)es/(N)o: \n");
-    printf("Quantity:\n");
+    }
+    //here save the inputItem to file
+    FILE myfile = fopen();
+    noOfReadItem++;
+    //save back to the file
+    start("Done!");
 }
+
+
 void removeItem(void){
     start("Adding Item");
 
@@ -81,7 +115,7 @@ void stockItem(void){
 
     printf("Quantity to add: \n");
     selectQuantity = getInt();
-    while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items array
+    while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items arrays
         printf("[1<=Quantity to add:<=%d], retry: ",items[selectRow-1].quantity);
         selectQuantity = getInt();
     }
@@ -252,7 +286,7 @@ int selectItems(void){
     int ret;
     printf("Select row:\n");
     ret = getInt();
-    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items array
+    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
         printf("[0<=Row Number<=%d], retry: ",noOfReadItem);
         ret = getInt();
     }
@@ -264,7 +298,7 @@ int selectQuantity(void) {
     int ret;
     printf("Select row:\n");
     ret = getInt();
-    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items array
+    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
         printf("[0<=Quantity to add:<=%d], retry: ",noOfReadItem);
         ret = getInt();
     }
