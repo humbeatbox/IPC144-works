@@ -45,7 +45,7 @@ void addItem(void){
 
 
     //check the number of system if over MAX_NO_ITEMS end of add
-    if(noOfReadItem > 28){
+    if(noOfReadItem >= 28){
         printf("This system cannot store more that 28 different Items in the inventory!\n");
     } else {
 
@@ -89,7 +89,12 @@ void addItem(void){
         }
     }
     //here save the inputItem to file
-    FILE myfile = fopen();
+    //save the local item into global items
+    strcpy(items[noOfReadItem].SKU, inputItem.SKU);
+    strcpy(items[noOfReadItem].name , inputItem.name);
+    items[noOfReadItem].price = inputItem.price;
+    items[noOfReadItem].taxed = inputItem.taxed;
+    items[noOfReadItem].quantity = inputItem.quantity;
     noOfReadItem++;
     //save back to the file
     start("Done!");
