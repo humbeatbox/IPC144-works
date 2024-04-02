@@ -209,28 +209,27 @@ void saveItems(const char filename[]){
 //return the number of the item in the file
 int loadItems(const char filename[]){
     start("Loading Items");
-//    struct Item readItem; //create a temp item to read from the file
-//    FILE* myfile = fopen(filename, "r");//open the file for read
-//    //if(myfile) {//if file exist keep going
-////
-//        //read the file and put input the tmp readItem
-//        while (fscanf(myfile, "%[^\\,],%[^\\,],%lf,%d,%d", readItem.SKU, readItem.name, &readItem.price, &readItem.taxed, &readItem.quantity) == 5) {
-//
-//            flushFile(myfile);
-//
-//            //save the local item into global items
-//            strcpy(items[noOfReadItem].SKU, readItem.SKU);
-//            strcpy(items[noOfReadItem].name , readItem.name);
-//            items[noOfReadItem].price = readItem.price;
-//            items[noOfReadItem].taxed = readItem.taxed;
-//            items[noOfReadItem].quantity = readItem.quantity;
-//
-//            noOfReadItem++;//for save to next items
-//        }
-//        fclose(myfile);
-//    }else {
-//        fprintf( stderr, "File not found!\n" );
-//    }
+    struct Item readItem; //create a temp item to read from the file
+    FILE* myfile = fopen(filename, "r");//open the file for read
+    if(myfile) {//if file exist keep going
+        //read the file and put input the tmp readItem
+        while (fscanf(myfile, "%[^,],%[^,],%lf,%d,%d", readItem.SKU, readItem.name, &readItem.price, &readItem.taxed, &readItem.quantity) == 5) {
+
+            flushFile(myfile);
+
+            //save the local item into global items
+            strcpy(items[noOfReadItem].SKU, readItem.SKU);
+            strcpy(items[noOfReadItem].name , readItem.name);
+            items[noOfReadItem].price = readItem.price;
+            items[noOfReadItem].taxed = readItem.taxed;
+            items[noOfReadItem].quantity = readItem.quantity;
+
+            noOfReadItem++;//for save to next items
+        }
+        fclose(myfile);
+    }else {
+        fprintf( stderr, "File not found!\n" );
+    }
     //start("Done!");
     return noOfReadItem;//return item number not item index
 }

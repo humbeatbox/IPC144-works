@@ -1,0 +1,10 @@
+In milestone 2, the major part is to read the file and copy it to the Item types items.
+The challenge that I faced is that it can not read the line separate by the comma correctly, and I spend a lot of time to find the solution.
+When using the "fscanf" function I try to read the string but I found out it does't work because if I read the item with string type I need to scan it one by one.
+so I trying to write a function when I read the items name.
+But it doesn't make sense.
+So that I try to read the whole line and separate by my own self but it still doesn't work when I found it is too hard and I can not predict the length of the name.
+Instead of coming up with using the %[^,] (read and end up to the comma), I a lot of way to scan the line of file.
+Finally, I change the way I think, I use %[^\\,] to solve the problem.
+The reason is I think I can use %[^\n] to read the line but what is the substitute of '\n', '\\,' jump into my mind.
+Although I know that it is not necessary when I ask the professor, I still learn something at all.

@@ -48,32 +48,32 @@ void runPos(const char filename[]){
         //selection = slect
         switch (menu()) {// transfer the select to here
             case 1:
-//                inventory();
-                prtFunction("Inventory");
+                inventory();
+                //prtFunction("Inventory");
                 break;
             case 2:
-//                addItem();
-                prtFunction("Adding Item");
+                addItem();
+                //prtFunction("Adding Item");
                 break;
             case 3:
-//                removeItem();
-                prtFunction("Remove Item");
+                removeItem();
+                //prtFunction("Remove Item");
                 break;
             case 4:
-                prtFunction("Stock Items");
+                //prtFunction("Stock Items");
 
-//                stockItem();
+                stockItem();
                 break;
             case 5:
-                prtFunction("Point Of Sale");
+                //prtFunction("Point Of Sale");
 
-//                POS();
+                POS();
                 break;
             case 0:
                 done = 1;
-                prtFunction("Saving Items");
+                //prtFunction("Saving Items");
 
-//                saveItems(filename);
+                saveItems(filename);
                 break;
             default:
                 printf("Invalid selection!\n");

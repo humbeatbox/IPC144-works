@@ -14,19 +14,21 @@ I have done all the coding by myself and only copied the code
 that my professor provided to complete my project milestones.
 -----------------------------------------------------------
 */
+
 #include "PosUI.h"
 
-//Here is my personal part
-/*int main() {
+//For MS2
+int main() {
     runPos("posdata.csv");
     return 0;
-}*/
+}
 
 //for MS1
 //If I upload my personal main Matrix can not replay by main_pro.c and it goes wrong
-#include <stdio.h>
+/*#include <stdio.h>
 #include "POS.h"
 #include "PosUI.h"
+
 int main() {
     printf("Testing POS.h defined values:\n");
     if(TAX - 0.13 < 0.00001 && 0.13 - TAX < 0.00001) {
@@ -56,7 +58,7 @@ int main() {
     }
     runPos("posdata.csv");
     return 0;
-}
+}*/
 
 
 /*
