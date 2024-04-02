@@ -25,8 +25,8 @@ struct Item{
     int taxed;
     int quantity;
 };
-extern struct Item items[MAX_NO_ITEMS];
-extern noOfReadItem;
+//extern struct Item items[MAX_NO_ITEMS];
+//extern noOfReadItem;
 
 void start(const char* action);
 void inventory(void);

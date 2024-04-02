@@ -39,7 +39,7 @@ int menu(void){
 
 void runPos(const char filename[]){
 
-    FILE* myfile = fopen(filename,"r");
+    //FILE* myfile = fopen(filename,"r");
     //load the file
     loadItems(filename);
     //display the menu waiting for the user to select

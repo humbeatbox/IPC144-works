@@ -103,7 +103,7 @@ void addItem(void){
 
 void removeItem(void){
     start("removeItem");
-    struct Item rmItem={};
+    struct Item rmItem={0};
     int rmRowNum=0;
     printf("Select an item:\n");
     listItems();
@@ -149,7 +149,7 @@ void stockItem(void){
 void POS(void){
     //Uses an array of Item structure pointers to keep the addresses of the sold items for bill printing
     start("Point Of Sale");
-    struct Item* bill[MAX_BILL_ITEMS]={};//set the bill as zero for print the bill
+    struct Item* bill[MAX_BILL_ITEMS]={0};//set the bill as zero for print the bill
     double totalPrice = 0;
     int modifyIndex;
     int numOfBill = 0;
@@ -257,7 +257,7 @@ void listItems(void){
 //return the price after taxed
 double billDisplay(const struct Item* item){
     char cur_cost[15];
-    strlcpy(cur_cost,item->name,15);//using the size bound string copy string
+    strncpy(cur_cost,item->name,15);//using the size bound string copy string
     printf("| " "%-14s" "|",cur_cost);
     printf("%10.2lf"" | ", cost(item));
     (item->taxed == 0)?printf("   "): printf("Yes");
