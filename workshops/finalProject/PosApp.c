@@ -128,6 +128,7 @@ void removeItem(void){
 void stockItem(void){
     start("Stock Items");
     printf("Select an item:\n");
+    printf("-----v--------v--------------------v-------v---v-----v---------|\n");
     listItems();
     int selectRow;
     int selectQuantity;
@@ -242,7 +243,6 @@ double cost(const struct Item* item){
 //list the items in the saving items list
 void listItems(void){
     printf(
-            "-----|--------|--------------------|-------|---|-----|---------|\n"
             " Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
             "-----|--------|--------------------|-------|---|-----|---------|\n");
     int i;
