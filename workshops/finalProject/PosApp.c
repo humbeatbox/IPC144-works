@@ -184,7 +184,7 @@ void POS(void){
 
 //save the items from the filename input
 void saveItems(const char filename[]){
-    start("saveItems");
+    start("Saving Items");
     FILE* myfile = fopen(filename, "w");//open the file for write
     if(myfile) {
         int i;
