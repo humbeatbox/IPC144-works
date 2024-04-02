@@ -84,7 +84,7 @@ void addItem(void){
         printf("Quantity: ");
         inputItem.quantity = getInt();
         while (inputItem.quantity > 999 || inputItem.quantity < 1) {
-            printf("[1<=Quantity<999], retry: ");
+            printf("[1<=Quantity<=999], retry: ");
             inputItem.quantity = getInt();
         }
     }
@@ -112,7 +112,7 @@ void removeItem(void){
     //select the remove row
     rmRowNum = getInt();
     while (rmRowNum < 1 || rmRowNum > noOfReadItem){
-            printf("[1<=Row Number<%d], retry: ",noOfReadItem);
+            printf("[1<=Row Number<=%d], retry: ",noOfReadItem-1);//MS5 fix 4/2 need test
             rmRowNum = getInt();
     }
     //remove the item of the indicate row and move the back item to front index
@@ -171,16 +171,18 @@ void POS(void){
             totalPrice += cost(&items[modifyIndex]);
         }
     }
-    printf("+---------------v-----------v-----+\n"
-           "| Item          |     Price | Tax |\n"
-           "+---------------+-----------+-----+\n");
-    int j;
-    for (j= 0; j < numOfBill; j++) {//have items in bill and less than the max of items in bill
-        billDisplay(bill[j]);
+    if( bill[0] != 0 ) {//first one is not zero
+        printf("+---------------v-----------v-----+\n"
+               "| Item          |     Price | Tax |\n"
+               "+---------------+-----------+-----+\n");
+        int j;
+        for (j = 0; j < numOfBill; j++) {//have items in bill and less than the max of items in bill
+            billDisplay(bill[j]);
+        }
+        printf("+---------------^-----------^-----+\n"
+               "| total:             %6.2lf |\n"
+               "^---------------------------^\n", totalPrice);
     }
-    printf("+---------------^-----------^-----+\n"
-           "| total:              %6.2lf|\n"
-           "^---------------------------^\n",totalPrice);
 }
 
 //save the items from the filename input

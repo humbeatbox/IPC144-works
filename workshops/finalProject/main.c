@@ -18,10 +18,10 @@ that my professor provided to complete my project milestones.
 #include "PosUI.h"
 
 //For MS2
-int main() {
+/*int main() {
     runPos("posdata.csv");
     return 0;
-}
+}*/
 
 //for MS1
 //If I upload my personal main Matrix can not replay by main_pro.c and it goes wrong
@@ -156,7 +156,7 @@ int main() {
     printf("Search was executed %d times...", i);
     return 0;
 }*/
-/*
+
 
 //for MS35
 #define _CRT_SECURE_NO_WARNINGS
@@ -195,7 +195,7 @@ void fileDump(const char* filename) {
     } else {
         printf("file: >>%s<< not found!\n", filename);
     }
-}*/
+}
 
 
 //for MS4 and MS5
