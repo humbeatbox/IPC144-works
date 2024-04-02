@@ -128,14 +128,14 @@ void removeItem(void){
 void stockItem(void){
     start("Stock Items");
     printf("Select an item:\n");
-    printf("-----v--------v--------------------v-------v---v-----v---------|\n");
+    printf("-----v--------v--------------------v-------v---v-----v---------v\n");
     listItems();
     int selectRow;
     int selectQuantity;
     selectRow = selectItems();
     display(&items[selectRow-1]);//transfer the row to index
 
-    printf("Quantity to add: \n");
+    printf("Quantity to add: ");
     selectQuantity = getInt();
     while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items arrays
         printf("[1<=Quantity to add:<=%d], retry: ",items[selectRow-1].quantity);
@@ -306,7 +306,7 @@ int search(void){
 //let the user select the item of the row number
 int selectItems(void){
     int ret;
-    printf("Select row:\n");
+    printf("Select row: ");
     ret = getInt();
     while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
         printf("[0<=Row Number<=%d], retry: ",noOfReadItem);
