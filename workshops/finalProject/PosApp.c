@@ -97,7 +97,7 @@ void addItem(void){
     items[noOfReadItem].quantity = inputItem.quantity;
     noOfReadItem++;
     //save back to the file
-    //start("Done!");
+    start("Done!");
 }
 
 
@@ -256,7 +256,7 @@ void listItems(void){
 //return the price after taxed
 double billDisplay(const struct Item* item){
     char cur_cost[15];
-    strncpy(cur_cost,item->name,15);//using the size bound string copy string
+    strncpy(cur_cost,item->name,14);//using the size bound string copy string
     printf("| " "%-14s" "|",cur_cost);
     printf("%10.2lf"" | ", cost(item));
     (item->taxed == 0)?printf("   "): printf("Yes");
