@@ -202,7 +202,7 @@ void saveItems(const char filename[]){
     }else {
         printf("Could not open >>" "%s" "<<\n",filename );
     }
-    start("Done!");
+    //start("Done!");
 }
 
 //load the item from the input filename
