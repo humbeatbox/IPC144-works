@@ -17,7 +17,7 @@ that my professor provided to complete my project milestones.
 #include "PosUI.h"
 #include "utils.h"
 #include "PosApp.h"
-#include <stdbool.h>
+
 void prtFunction(const char* action);
 int menu(void){
     int ret;
@@ -43,7 +43,7 @@ void runPos(const char filename[]){
     //load the file
     loadItems(filename);
     //display the menu waiting for the user to select
-    bool done = false;
+    int done = 0;
     while (!done){
         //selection = slect
         switch (menu()) {// transfer the select to here
@@ -70,7 +70,7 @@ void runPos(const char filename[]){
 //                POS();
                 break;
             case 0:
-                done = true;
+                done = 1;
                 prtFunction("Saving Items");
 
 //                saveItems(filename);

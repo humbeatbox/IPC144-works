@@ -1,0 +1,9 @@
+In MS1, I am facing a challenge of load the wrong file in the wrong directory.
+Because I develop in my personal laptop and it builds a new directory for create a program and save the error message.
+So that I can not find out where should I put the "posdata.csv" file in until I figure out how my IDE work.
+
+Another part of challenge is I spend a lot of time trying to understand the structure of whole system design even I am just in milestone one.
+I found it is totally not necessary because it is just the beginning of the project and I will be clear in the later in the end.
+
+There is no need to use the bool type of variable to handle the function especially I am not familiar with the bool library.
+This might make some stupid mistake and making some error for using an unfamiliar stuff.
