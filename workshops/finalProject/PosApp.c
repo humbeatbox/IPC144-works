@@ -241,8 +241,10 @@ double cost(const struct Item* item){
 
 //list the items in the saving items list
 void listItems(void){
-    printf(" Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
-           "-----|--------|--------------------|-------|---|-----|---------|\n");
+    printf(
+            "-----|--------|--------------------|-------|---|-----|---------|\n"
+            " Row | SKU    | Item Name          | Price |TX | Qty |   Total |\n"
+            "-----|--------|--------------------|-------|---|-----|---------|\n");
     int i;
     for (i = 0; i < noOfReadItem; i++) {//read the items from the items and print it ine by one
         printf("%4d" " | " "%6s" " | " "%-18s" " |" "%6.2lf" " | ",i+1,items[i].SKU, items[i].name, items[i].price);
