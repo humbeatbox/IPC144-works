@@ -18,7 +18,7 @@ that my professor provided to complete my project milestones.
 #include "utils.h"
 #include "PosApp.h"
 #include <stdbool.h>
-
+void prtFunction(const char* action);
 int menu(void){
     int ret;
     printf("The Sene-Store\n"
@@ -39,7 +39,7 @@ int menu(void){
 
 void runPos(const char filename[]){
 
-    FILE* myfile = fopen(filename,"r");
+    //FILE* myfile = fopen(filename,"r");
     //load the file
     loadItems(filename);
     //display the menu waiting for the user to select
@@ -48,27 +48,38 @@ void runPos(const char filename[]){
         //selection = slect
         switch (menu()) {// transfer the select to here
             case 1:
-                inventory();
+//                inventory();
+                prtFunction("Inventory");
                 break;
             case 2:
-                addItem();
+//                addItem();
                 break;
             case 3:
-                removeItem();
+//                removeItem();
+                prtFunction("removeItem");
                 break;
             case 4:
-                stockItem();
+                prtFunction("Stock Items");
+
+//                stockItem();
                 break;
             case 5:
-                POS();
+                prtFunction("Point Of Sale");
+
+//                POS();
                 break;
             case 0:
                 done = true;
-                saveItems(filename);
+                prtFunction("saveItems");
+
+//                saveItems(filename);
                 break;
             default:
                 printf("Invalid selection!\n");
         }
     }
     printf("Goodbye!\n");
+}
+void prtFunction(const char* action) {
+    printf(">>>> %s...\n", action);
 }

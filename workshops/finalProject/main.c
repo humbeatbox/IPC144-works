@@ -18,10 +18,10 @@ that my professor provided to complete my project milestones.
 
 #include "PosUI.h"
 
-/*int main() {
+int main() {
     runPos("posdata.csv");
     return 0;
-}*/
+}
 
 
 /*
@@ -165,6 +165,8 @@ void fileDump(const char* filename) {
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "PosUI.h"
+/*
+
 void fileDump(const char* filename);
 void ressetData();
 int main() {
@@ -199,4 +201,4 @@ void fileDump(const char* filename) {
     } else {
         printf("file: >>%s<< not found!\n", filename);
     }
-}
+}*/
