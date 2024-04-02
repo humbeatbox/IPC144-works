@@ -309,7 +309,7 @@ int selectItems(void){
     printf("Select row: ");
     ret = getInt();
     while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
-        printf("[0<=Row Number<=%d], retry: ",noOfReadItem);
+        printf("[1<=Row Number<=%d], retry: ",noOfReadItem);
         ret = getInt();
     }
     return ret;
