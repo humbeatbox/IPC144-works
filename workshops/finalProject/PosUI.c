@@ -53,10 +53,11 @@ void runPos(const char filename[]){
                 break;
             case 2:
 //                addItem();
+                prtFunction("Adding Item");
                 break;
             case 3:
 //                removeItem();
-                prtFunction("removeItem");
+                prtFunction("Remove Item");
                 break;
             case 4:
                 prtFunction("Stock Items");
@@ -70,7 +71,7 @@ void runPos(const char filename[]){
                 break;
             case 0:
                 done = true;
-                prtFunction("saveItems");
+                prtFunction("Saving Items");
 
 //                saveItems(filename);
                 break;

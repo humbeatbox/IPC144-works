@@ -208,7 +208,7 @@ void saveItems(const char filename[]){
 //load the item from the input filename
 //return the number of the item in the file
 int loadItems(const char filename[]){
-    start("loadItems");
+    start("LoadItems");
     struct Item readItem; //create a temp item to read from the file
     FILE* myfile = fopen(filename, "r");//open the file for read
     if(myfile) {//if file exist keep going
@@ -231,7 +231,7 @@ int loadItems(const char filename[]){
     }else {
         fprintf( stderr, "File not found!\n" );
     }
-    start("Done!");
+    //start("Done!");
     return noOfReadItem;//return item number not item index
 }
 
