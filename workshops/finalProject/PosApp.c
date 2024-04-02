@@ -97,7 +97,7 @@ void addItem(void){
     items[noOfReadItem].quantity = inputItem.quantity;
     noOfReadItem++;
     //save back to the file
-    start("Done!");
+    //start("Done!");
 }
 
 
@@ -230,7 +230,7 @@ int loadItems(const char filename[]){
     }else {
         fprintf( stderr, "File not found!\n" );
     }
-    //start("Done!");
+    start("Done!");
     return noOfReadItem;//return item number not item index
 }
 
