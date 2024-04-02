@@ -103,7 +103,7 @@ void addItem(void){
 
 void removeItem(void){
     start("removeItem");
-    struct Item rmItem={0};
+    //struct Item rmItem={0};
     int rmRowNum=0;
     printf("Select an item:\n");
     listItems();
