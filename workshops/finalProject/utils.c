@@ -31,7 +31,7 @@ int getInt(){
 
     while (scanf("%d%c",&ret,&trash) !=2 || trash != '\n'){
         fluKey();
-        printf("Invalid Integer, try again:  ");
+        printf("Invalid Integer, try again: ");
     }
     return ret;
 }
