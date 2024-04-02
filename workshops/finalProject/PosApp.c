@@ -152,7 +152,7 @@ void POS(void){
     start("Point Of Sale");
     struct Item* bill[MAX_BILL_ITEMS]={0};//set the bill as zero for print the bill
     double totalPrice = 0;
-    int modifyIndex;
+    int modifyIndex = 0;
     int numOfBill = 0;
 
     int i;

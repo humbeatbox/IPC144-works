@@ -15,10 +15,11 @@ that my professor provided to complete my project milestones.
 -----------------------------------------------------------
 */
 
+//For MS2
+/*
 #include "PosUI.h"
 
-//For MS2
-/*int main() {
+int main() {
     runPos("posdata.csv");
     return 0;
 }*/
@@ -157,6 +158,7 @@ int main() {
     return 0;
 }*/
 
+/*
 
 //for MS35
 #define _CRT_SECURE_NO_WARNINGS
@@ -196,13 +198,14 @@ void fileDump(const char* filename) {
         printf("file: >>%s<< not found!\n", filename);
     }
 }
+*/
 
 
 //for MS4 and MS5
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "PosUI.h"
-/*
+
 
 void fileDump(const char* filename);
 void ressetData();
@@ -238,4 +241,4 @@ void fileDump(const char* filename) {
     } else {
         printf("file: >>%s<< not found!\n", filename);
     }
-}*/
+}
