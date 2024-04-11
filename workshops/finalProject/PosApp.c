@@ -95,7 +95,7 @@ void addItem(void){
     items[noOfReadItem].quantity = inputItem.quantity;
     noOfReadItem++;
     //save back to the file
-    //start("Done!");
+    start("Done!");
 }
 
 
