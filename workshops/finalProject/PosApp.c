@@ -100,16 +100,17 @@ void addItem(void){
 
 
 void removeItem(void){
-    start("removeItem");
+    start("RemoveItem");
     //struct Item rmItem={0};
     int rmRowNum=0;
     printf("Select an item:\n");
+    printf("-----v--------v--------------------v-------v---v-----v---------v\n");
     listItems();
     printf("Select row: ");
 
     //select the remove row
     rmRowNum = getInt();
-    while (rmRowNum < 1 || rmRowNum > noOfReadItem){
+    while (rmRowNum < 1 || rmRowNum >= noOfReadItem){
             printf("[1<=Row Number<=%d], retry: ",noOfReadItem-1);//MS5 fix 4/2 need test
             rmRowNum = getInt();
     }
