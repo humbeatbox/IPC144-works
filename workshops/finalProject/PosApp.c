@@ -63,8 +63,6 @@ void addItem(void){
 
         printf("Price: ");
         inputItem.price = getDbl();
-
-
         printf("Is the item Taxed? (Y)es/(N)o: ");
 
         taxedOrNot = getChar();
@@ -133,6 +131,7 @@ void stockItem(void){
     int selectRow;
     int selectQuantity;
     selectRow = selectItems();
+    //show the Selection: number //for V1.1
     display(&items[selectRow-1]);//transfer the row to index
 
     printf("Quantity to Add: ");
@@ -155,8 +154,8 @@ void POS(void){
     int modifyIndex = 0;
     int numOfBill = 0;
 
-    int i;
-    for (i = 0; i < MAX_BILL_ITEMS &&  (modifyIndex != -2) ; i++) {//bill len less than 10 (0-9) and not no input
+    int flag=0;
+    while ((flag < MAX_BILL_ITEMS) && (modifyIndex != -2)) {//bill len less than 10 (0-9) and not no input
         modifyIndex = search();//find the target
         if(modifyIndex==-2)break;//in case first time no input
         if(modifyIndex != -1 && items[modifyIndex].quantity == 0){//found item but sold out!
@@ -169,6 +168,8 @@ void POS(void){
             display(&items[modifyIndex]);
             numOfBill++;
             totalPrice += cost(&items[modifyIndex]);
+            //need a flg to fix the loop and change to while
+            flag++;
         }
     }
     if( bill[0] != 0 ) {//first one is not zero
@@ -199,12 +200,11 @@ void saveItems(const char filename[]){
                     "%d"","
                     "%d""\n"
                     ,items[i].SKU,items[i].name,items[i].price,items[i].taxed,items[i].quantity);
-
         }
-        fclose(myfile);
     }else {
         printf("Could not open >>" "%s" "<<\n",filename );
     }
+    if(myfile)fclose(myfile);//what ever open or not try to close it!!!
     start("Done!");
 }
 
@@ -229,10 +229,10 @@ int loadItems(const char filename[]){
 
             noOfReadItem++;//for save to next items
         }
-        fclose(myfile);
     }else {
         fprintf( stderr, "File not found!\n" );
     }
+    if(myfile)fclose(myfile);//what ever open or not try to close it!!!
     start("Done!");
     return noOfReadItem;//return item number not item index
 }

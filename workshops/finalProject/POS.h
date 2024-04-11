@@ -22,6 +22,6 @@ that my professor provided to complete my project milestones.
 #define MAX_STOCK_NUMBER  999
 //#define MAX_NO_ITEMS  500
 #define MAX_NO_ITEMS  500 //MS5
-#define MAX_BILL_ITEMS 10
+#define MAX_BILL_ITEMS 3
 
 #endif //FINALPROJECT_POS_H

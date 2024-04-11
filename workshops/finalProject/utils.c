@@ -21,7 +21,7 @@ void fluKey(){
 }
 void flushFile( FILE* fptr ) {
     char ch=0;
-    while ( ch != '\n' ) {
+    while ( ch != '\n'){
         fscanf( fptr, "%c", &ch );
     }
 }

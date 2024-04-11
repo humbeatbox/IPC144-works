@@ -1,4 +1,4 @@
-MS5 version2
+
 In the final project, using different kind of condition to control the process flow and make the project clearly.
 There are few notice to myself to notice.
 Firstly, in comapare condition, "=" means set not equal to. This mistake happen lot of times when I tring to compare two numer even make this mistake on midtern exam.
