@@ -1,0 +1,9 @@
+In milestone 35, I call the address of bill Items.
+Using call addresses can save more memory and space to achieve better performance, especially in vast and complex systems.
+There is one more very critical point: "Check the question."
+I would say this is very important because I spend so much time trying to find out why my output is different from the correct one.
+I even suspected that the correct output had a problem until I finally read the instructor word by word and found the answer.
+Fortunately, we have a very clear instruction that can help us to follow.
+There is one more thing, which is that sometimes we want the code to do it at least once times.
+But if the user inputs the wrong input, we can't break it.
+Instead, using the do-while loop, the while loop can let us set a flag to break the loop if there are some things wrong.
