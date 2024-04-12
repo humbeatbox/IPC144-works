@@ -34,7 +34,9 @@ int menu(void){
         printf("[0<=Selection<=5], retry: ");
         ret = getInt();
     }
-    printf("Selection: %d\n",ret);
+    if(ret!=0){
+        printf("Selection: %d\n",ret);
+    }
     return ret;
 }
 
