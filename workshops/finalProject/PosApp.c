@@ -101,7 +101,7 @@ void addItem(void){
 
 
 void removeItem(void){
-    start("RemoveItem");
+    start("Remove Item");
     //struct Item rmItem={0};
     int rmRowNum=0;
     printf("Select an item:\n");
@@ -112,7 +112,7 @@ void removeItem(void){
     //select the remove row
     rmRowNum = getInt();
     while (rmRowNum < 1 || rmRowNum >= noOfReadItem){
-            printf("[1<=Row Number<=%d], retry: ",noOfReadItem-1);//MS5 fix 4/2 need test
+            printf("[1<=Row Number<=%d], retry: ",noOfReadItem);
             rmRowNum = getInt();
     }
     //remove the item of the indicate row and move the back item to front index
