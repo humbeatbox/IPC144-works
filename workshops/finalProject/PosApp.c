@@ -137,7 +137,7 @@ void stockItem(void){
     //show the Selection: number //for V1.1
     display(&items[selectRow-1]);//transfer the row to index
 
-    printf("Quantity to Add: ");
+    printf("Quantity to add: ");
     selectQuantity = getInt();
     while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items arrays
         printf("[1<=Quantity to add:<=%d], retry: ",MAX_STOCK_NUMBER-items[selectRow-1].quantity);
