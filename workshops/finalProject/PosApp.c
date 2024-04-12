@@ -85,17 +85,18 @@ void addItem(void){
             printf("[1<=Quantity<=999], retry: ");
             inputItem.quantity = getInt();
         }
+        //here save the inputItem to file
+        //save the local item into global items
+        strcpy(items[noOfReadItem].SKU, inputItem.SKU);
+        strcpy(items[noOfReadItem].name , inputItem.name);
+        items[noOfReadItem].price = inputItem.price;
+        items[noOfReadItem].taxed = inputItem.taxed;
+        items[noOfReadItem].quantity = inputItem.quantity;
+        noOfReadItem++;
+        //save back to the file
+        start("Done!");
     }
-    //here save the inputItem to file
-    //save the local item into global items
-    strcpy(items[noOfReadItem].SKU, inputItem.SKU);
-    strcpy(items[noOfReadItem].name , inputItem.name);
-    items[noOfReadItem].price = inputItem.price;
-    items[noOfReadItem].taxed = inputItem.taxed;
-    items[noOfReadItem].quantity = inputItem.quantity;
-    noOfReadItem++;
-    //save back to the file
-    start("Done!");
+
 }
 
 
