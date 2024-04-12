@@ -143,6 +143,8 @@ void stockItem(void){
         printf("[1<=Quantity to Add<=%d], retry: ",MAX_STOCK_NUMBER-items[selectRow-1].quantity);
         selectQuantity = getInt();
     }
+    items[selectRow].quantity += selectQuantity;
+
     start("Done!");
 
 }
