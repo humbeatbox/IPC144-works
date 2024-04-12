@@ -34,6 +34,7 @@ int menu(void){
         printf("[0<=Selection<=5], retry: ");
         ret = getInt();
     }
+    printf("Selection: %d",ret);
     return ret;
 }
 
@@ -47,6 +48,7 @@ void runPos(const char filename[]){
     while (!done){
         //selection = slect
         switch (menu()) {// transfer the select to here
+
             case 1:
                 inventory();
                 //prtFunction("Inventory");
