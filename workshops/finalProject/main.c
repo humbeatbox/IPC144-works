@@ -158,7 +158,7 @@ int main() {
     return 0;
 }*/
 
-/*
+
 
 //for MS35
 #define _CRT_SECURE_NO_WARNINGS
@@ -198,8 +198,9 @@ void fileDump(const char* filename) {
         printf("file: >>%s<< not found!\n", filename);
     }
 }
-*/
 
+
+/*
 
 //for MS4 and MS5
 #define _CRT_SECURE_NO_WARNINGS
@@ -242,3 +243,4 @@ void fileDump(const char* filename) {
         printf("file: >>%s<< not found!\n", filename);
     }
 }
+*/
