@@ -78,7 +78,8 @@ void addItem(void){
                 taxedOrNot = getChar();
             }
         } while (!(taxedOrNot == 'Y' || (taxedOrNot == 'y') || taxedOrNot == 'N' || taxedOrNot == 'n'));
-
+        //check and fix later
+        // selectInt("Quantity: ",10,);
         printf("Quantity: ");
         inputItem.quantity = getInt();
         while (inputItem.quantity > 999 || inputItem.quantity < 1) {
@@ -107,14 +108,16 @@ void removeItem(void){
     printf("Select an item:\n");
     printf("-----v--------v--------------------v-------v---v-----v---------v\n");
     listItems();
-    printf("Select row: ");
-
+    //need verify
+    rmRowNum = selectInt("Select row: ",12,"Row Number",10,noOfReadItem);
+/*    printf("Select row: ");
     //select the remove row
     rmRowNum = getInt();
     while (rmRowNum < 1 || rmRowNum >= noOfReadItem){
             printf("[1<=Row Number<=%d], retry: ",noOfReadItem);
             rmRowNum = getInt();
-    }
+    }*/
+
     //remove the item of the indicate row and move the back item to front index
     //items
     int i;
@@ -132,17 +135,23 @@ void stockItem(void){
     printf("-----v--------v--------------------v-------v---v-----v---------v\n");
     listItems();
     int selectRow;
-    int selectQuantity;
+    int selectQuantity = 0;
     selectRow = selectItems();
     //show the Selection: number //for V1.1
     display(&items[selectRow-1]);//transfer the row to index
 
+    //need verify
+    while((selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER)) {
+        selectQuantity = selectInt("Quantity to add: ", 17, "Quantity to Add", 5,
+                                   MAX_STOCK_NUMBER - items[selectRow - 1].quantity);
+    }
+    /*
     printf("Quantity to add: ");
     selectQuantity = getInt();
     while (selectQuantity < 1 || selectQuantity > (items[selectRow-1].quantity) || selectQuantity > MAX_STOCK_NUMBER){//noOfReadItem is an index of items arrays
         printf("[1<=Quantity to Add<=%d], retry: ",MAX_STOCK_NUMBER-items[selectRow-1].quantity);
         selectQuantity = getInt();
-    }
+    }*/
     items[selectRow-1].quantity += selectQuantity;
 
     start("Done!");
@@ -315,25 +324,35 @@ int search(void){
 //let the user select the item of the row number
 int selectItems(void){
     int ret;
+    //need verify
+    ret = selectInt("Select row: ",12,"Row Number",10,noOfReadItem);
+    /*
     printf("Select row: ");
     ret = getInt();
     while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
         printf("[1<=Row Number<=%d], retry: ",noOfReadItem);
         ret = getInt();
-    }
+    }*/
     return ret;
 }
 
-/*
-int selectQuantity(void) {
-    int ret;
-    printf("Select row:\n");
+//get what want to show on screen
+int selectInt(char str1[],int num1,char str2[],int num2,int compare) {
+    int ret;//return
+    int i;//for loop
+    for (i = 0; i < num1; ++i) {
+        printf("%s",str1);
+    }
+    printf("\n");
     ret = getInt();
-    while (ret < 1 || ret > (noOfReadItem)){//noOfReadItem is an index of items arrays
-        printf("[0<=Quantity to add:<=%d], retry: ",noOfReadItem);
+    while (ret < 1 || ret > (compare)){
+        printf("[0<=");
+        for (i = 0; i < num2; ++i) {
+            printf("%s",str2);
+        }
+        printf("<=%d], retry: \n",compare);
         ret = getInt();
     }
     return ret;
 }
-*/
-
+//(Select row:) and (Quantity to add:)

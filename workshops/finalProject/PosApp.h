@@ -42,4 +42,5 @@ double billDisplay(const struct Item* item);
 void display(const struct Item* item);
 int search(void);
 int selectItems(void);
+int selectInt(char str1[],int num1,char str2[],int num2,int compare);
 #endif //FINALPROJECT_POSAPP_H
